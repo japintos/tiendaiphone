@@ -1,0 +1,889 @@
+/* ===== RESET Y CONFIGURACIÓN BÁSICA ===== */
+/* Eliminamos márgenes y padding por defecto para tener control total */
+* {
+    margin: 5;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración del body con fuente de Google Fonts */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    /* Suavizamos el texto para mejor legibilidad */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== LAYOUT PRINCIPAL CON CSS GRID ===== */
+/* Definimos el grid principal usando grid-template-areas */
+body {
+    display: grid;
+    grid-template-areas: 
+        "cabecera"
+        "contenido-principal"
+        "pie-pagina";
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* Asignamos las áreas del grid */
+.cabecera {
+    grid-area: cabecera;
+}
+
+.contenido-principal {
+    grid-area: contenido-principal;
+}
+
+.pie-pagina {
+    grid-area: pie-pagina;
+}
+
+/* ===== VARIABLES CSS PARA COLORES ===== */
+:root {
+    /* Colores principales siguiendo jerarquía visual */
+    --color-primario: #1e3a8a;      /* Azul oscuro profesional */
+    --color-secundario: #f97316;     /* Naranja suave para destacar */
+    --color-fondo: #f8f9fa;          /* Fondo claro y neutro */
+    --color-texto: #333333;          /* Texto principal oscuro */
+    --color-texto-claro: #666666;    /* Texto secundario */
+    --color-blanco: #ffffff;
+    --color-gris-claro: #e5e7eb;
+    --color-gris-medio: #9ca3af;
+    
+    /* Colores para estados y validación */
+    --color-exito: #10b981;          /* Verde para éxito */
+    --color-error: #ef4444;          /* Rojo para errores */
+    --color-advertencia: #f59e0b;    /* Amarillo para advertencias */
+    
+    /* Sombras para profundidad visual */
+    --sombra-suave: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --sombra-fuerte: 0 8px 16px rgba(0, 0, 0, 0.2);
+    
+    /* Transiciones suaves */
+    --transicion-rapida: 0.2s ease;
+    --transicion-media: 0.3s ease;
+}
+
+/* ===== CABECERA ===== */
+.cabecera {
+    background: var(--color-blanco);
+    box-shadow: var(--sombra-suave);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.contenedor-cabecera {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo y enlace */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    text-decoration: none;
+    transition: all var(--transicion-rapida);
+}
+
+.logo-link:hover {
+    transform: scale(1.05);
+}
+
+.img-logo {
+    height: 70px;
+    width: auto;
+    transition: all var(--transicion-rapida);
+}
+
+/* Navegación principal */
+.navegacion-principal {
+    /* Usamos flexbox para organizar el menú horizontalmente */
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all var(--transicion-rapida);
+    position: relative;
+}
+
+.menu a:hover {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+
+.menu a.activo {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+}
+
+/* ===== SECCIÓN ENCABEZADO ===== */
+.seccion-encabezado {
+    background: linear-gradient(135deg, var(--color-primario) 0%, #3b82f6 100%);
+    color: var(--color-blanco);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.contenedor-encabezado {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.titulo-garantias {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.subtitulo-garantias {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* ===== SECCIÓN GARANTÍA PRINCIPAL ===== */
+.seccion-garantia-principal {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenedor-garantia {
+    /* Contenedor para la garantía principal */
+}
+
+.grid-garantia-principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.imagen-garantia {
+    /* Contenedor para la imagen */
+}
+
+.img-garantia {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--sombra-media);
+}
+
+.texto-garantia {
+    /* Contenedor para el texto */
+}
+
+.titulo-seccion {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.titulo-seccion::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-secundario);
+    border-radius: 2px;
+}
+
+.parrafo-garantia {
+    font-size: 1.1rem;
+    color: var(--color-texto);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.destacado-garantia {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--color-fondo);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-exito);
+    margin-top: 1.5rem;
+}
+
+.icono-destacado {
+    font-size: 1.5rem;
+    color: var(--color-exito);
+}
+
+.destacado-garantia span:last-child {
+    font-weight: 600;
+    color: var(--color-primario);
+}
+
+/* ===== SECCIÓN COBERTURA ===== */
+.seccion-cobertura {
+    background-color: var(--color-gris-claro);
+    padding: 4rem 2rem;
+}
+
+.contenedor-cobertura {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.descripcion-cobertura {
+    font-size: 1.1rem;
+    color: var(--color-texto-claro);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-cobertura {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card-cobertura {
+    background: var(--color-blanco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    transition: all var(--transicion-media);
+    text-align: left;
+}
+
+.card-cobertura:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-media);
+}
+
+.icono-cobertura {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card-cobertura h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.lista-cobertura {
+    list-style: none;
+}
+
+.lista-cobertura li {
+    padding: 0.5rem 0;
+    color: var(--color-texto-claro);
+    border-bottom: 1px solid var(--color-gris-claro);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.lista-cobertura li:last-child {
+    border-bottom: none;
+}
+
+.lista-cobertura li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-exito);
+    font-weight: bold;
+}
+
+/* ===== SECCIÓN PROCESO ===== */
+.seccion-proceso {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenedor-proceso {
+    /* Contenedor para el proceso */
+}
+
+.descripcion-proceso {
+    font-size: 1.1rem;
+    color: var(--color-texto-claro);
+    margin-bottom: 3rem;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeline-proceso {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.paso-proceso {
+    background: var(--color-blanco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    text-align: center;
+    transition: all var(--transicion-media);
+    position: relative;
+}
+
+.paso-proceso:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-media);
+}
+
+.numero-paso {
+    width: 60px;
+    height: 60px;
+    background: var(--color-secundario);
+    color: var(--color-blanco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+}
+
+.contenido-paso h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.contenido-paso p {
+    color: var(--color-texto-claro);
+    line-height: 1.6;
+}
+
+/* ===== SECCIÓN POLÍTICAS ===== */
+.seccion-politicas {
+    background-color: var(--color-gris-claro);
+    padding: 4rem 2rem;
+}
+
+.contenedor-politicas {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-politicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card-politica {
+    background: var(--color-blanco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    transition: all var(--transicion-media);
+}
+
+.card-politica:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-media);
+}
+
+.icono-politica {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card-politica h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.contenido-politica p {
+    color: var(--color-texto);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.contenido-politica ul {
+    list-style: none;
+}
+
+.contenido-politica ul li {
+    padding: 0.5rem 0;
+    color: var(--color-texto-claro);
+    border-bottom: 1px solid var(--color-gris-claro);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.contenido-politica ul li:last-child {
+    border-bottom: none;
+}
+
+.contenido-politica ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-secundario);
+    font-weight: bold;
+}
+
+/* ===== SECCIÓN TÉRMINOS ===== */
+.seccion-terminos {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenedor-terminos {
+    /* Contenedor para los términos */
+}
+
+.grid-terminos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.termino-item {
+    background: var(--color-blanco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    transition: all var(--transicion-media);
+    border-left: 4px solid var(--color-secundario);
+}
+
+.termino-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-media);
+}
+
+.termino-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.termino-item p {
+    color: var(--color-texto-claro);
+    line-height: 1.6;
+}
+
+/* ===== SECCIÓN CONTACTO GARANTÍAS ===== */
+.seccion-contacto-garantias {
+    background-color: var(--color-gris-claro);
+    padding: 4rem 2rem;
+}
+
+.contenedor-contacto-garantias {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-contacto-garantias {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.texto-contacto {
+    /* Contenedor para el texto */
+}
+
+.descripcion-contacto {
+    font-size: 1.1rem;
+    color: var(--color-texto);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.canales-contacto {
+    /* Contenedor para los canales */
+}
+
+.canal-contacto {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--color-blanco);
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    transition: all var(--transicion-media);
+}
+
+.canal-contacto:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-media);
+}
+
+.icono-canal {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    background: var(--color-fondo);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-canal h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-bottom: 0.25rem;
+}
+
+.info-canal p {
+    color: var(--color-texto);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.info-canal span {
+    color: var(--color-texto-claro);
+    font-size: 0.9rem;
+}
+
+/* ===== FORMULARIO GARANTÍA ===== */
+.formulario-garantia {
+    background: var(--color-blanco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-media);
+}
+
+.formulario-garantia h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-bottom: 1.5rem;
+}
+
+.formulario-reclamo {
+    /* Contenedor del formulario */
+}
+
+.campo-formulario {
+    margin-bottom: 1.5rem;
+}
+
+.campo-formulario label {
+    display: block;
+    font-weight: 600;
+    color: var(--color-texto);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.campo-formulario input,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--color-gris-claro);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--color-texto);
+    background: var(--color-blanco);
+    transition: all var(--transicion-rapida);
+    font-family: inherit;
+}
+
+.campo-formulario input:focus,
+.campo-formulario textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.campo-formulario textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.boton-enviar-reclamo {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transicion-media);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 100%;
+}
+
+.boton-enviar-reclamo:hover {
+    background-color: #ea580c;
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-media);
+}
+
+/* ===== FOOTER ===== */
+.pie-pagina {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 3rem 2rem 1rem;
+}
+
+.contenedor-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.columna-footer h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-blanco);
+}
+
+.columna-footer p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.columna-footer ul {
+    list-style: none;
+}
+
+.columna-footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.columna-footer a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity var(--transicion-rapida);
+}
+
+.columna-footer a:hover {
+    opacity: 1;
+    color: var(--color-secundario);
+}
+
+.redes-sociales {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.red-social {
+    font-size: 0.9rem;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0.8;
+}
+
+/* ===== MEDIA QUERIES PARA RESPONSIVE DESIGN ===== */
+
+/* Tablets (768px y menos) */
+@media (max-width: 768px) {
+    .contenedor-cabecera {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .titulo-garantias {
+        font-size: 2.5rem;
+    }
+    
+    .subtitulo-garantias {
+        font-size: 1.1rem;
+    }
+    
+    .grid-garantia-principal {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .grid-cobertura {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-proceso {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-politicas {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-terminos {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-contacto-garantias {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contenedor-footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* Móviles (480px y menos) */
+@media (max-width: 480px) {
+    .contenedor-cabecera {
+        padding: 0.75rem;
+    }
+    
+    .img-logo {
+        height: 56px;
+    }
+    
+    .menu {
+        gap: 0.5rem;
+    }
+    
+    .menu a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .seccion-encabezado {
+        padding: 2rem 1rem;
+    }
+    
+    .titulo-garantias {
+        font-size: 2rem;
+    }
+    
+    .seccion-garantia-principal,
+    .seccion-cobertura,
+    .seccion-proceso,
+    .seccion-politicas,
+    .seccion-terminos,
+    .seccion-contacto-garantias {
+        padding: 3rem 1rem;
+    }
+    
+    .titulo-seccion {
+        font-size: 1.75rem;
+    }
+    
+    .card-cobertura,
+    .card-politica,
+    .termino-item,
+    .canal-contacto {
+        padding: 1.5rem;
+    }
+    
+    .formulario-garantia {
+        padding: 1.5rem;
+    }
+    
+    .pie-pagina {
+        padding: 2rem 1rem 1rem;
+    }
+}
+
+/* ===== MEJORAS DE ACCESIBILIDAD ===== */
+
+/* Enfoque visible para navegación por teclado */
+.menu a:focus,
+.campo-formulario input:focus,
+.campo-formulario textarea:focus,
+.boton-enviar-reclamo:focus {
+    outline: 3px solid var(--color-secundario);
+    outline-offset: 2px;
+}
+
+/* Mejoramos el contraste para textos */
+@media (prefers-contrast: high) {
+    :root {
+        --color-texto: #000000;
+        --color-texto-claro: #333333;
+    }
+}
+
+/* Animaciones reducidas para usuarios que las prefieren */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== COMENTARIOS FINALES ===== */
+/* 
+Este CSS implementa:
+✅ Grid con grid-template-areas para layout principal
+✅ Flexbox para elementos internos (políticas, términos, etc.)
+✅ Media queries para diseño responsive
+✅ Efectos hover y transiciones suaves
+✅ Google Fonts para tipografía
+✅ Jerarquía visual clara con tamaños de fuente
+✅ Jerarquía de colores con variables CSS
+✅ Timeline de proceso de garantía
+✅ Grid responsive para políticas y términos
+✅ Formulario de reclamo de garantía
+✅ Cards con efectos hover
+✅ Contraste suficiente para accesibilidad
+✅ Enfoque visible para navegación por teclado
+✅ Soporte para usuarios con preferencias de accesibilidad
+*/

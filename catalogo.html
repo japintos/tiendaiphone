@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - uPhone | Celulares Usados</title>
+    <meta name="description" content="Explora nuestro catálogo completo de iPhones usados. Encuentra el modelo perfecto para ti con garantía y a precios increíbles.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    
+    <!-- Google Fonts para mejorar la tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Vinculamos el archivo CSS específico de esta página -->
+    <link rel="stylesheet" href="./css/catalogo.css">
+</head>
+<body>
+    <!-- Header principal con logo y navegación -->
+    <header class="cabecera">
+        <div class="contenedor-cabecera">
+            <!-- Logo de la empresa -->
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="./img/logo.png" alt="uPhone - Celulares Usados Premium" class="img-logo">
+                </a>
+            </div>
+            
+            <!-- Menú de navegación principal -->
+            <nav class="navegacion-principal">
+                <ul class="menu">
+                    <li><a href="catalogo.html" class="activo">Catálogo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="garantias.html">Garantías</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal de la página -->
+    <main class="contenido-principal">
+        <!-- Sección de encabezado del catálogo -->
+        <section class="seccion-encabezado">
+            <div class="contenedor-encabezado">
+                <h2 class="titulo-catalogo">Catálogo de Celulares</h2>
+                <p class="subtitulo-catalogo">Descubre nuestra selección completa de iPhones usados en excelente estado</p>
+                
+                <!-- Filtros de búsqueda -->
+                <div class="filtros-busqueda">
+                    <div class="filtro-grupo">
+                        <label for="filtro-modelo">Modelo:</label>
+                        <select id="filtro-modelo" class="filtro-select">
+                            <option value="">Todos los modelos</option>
+                            <option value="iphone-15">iPhone 15</option>
+                            <option value="iphone-14">iPhone 14</option>
+                            <option value="iphone-13">iPhone 13</option>
+                            <option value="iphone-12">iPhone 12</option>
+                            <option value="iphone-11">iPhone 11</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filtro-grupo">
+                        <label for="filtro-precio">Precio:</label>
+                        <select id="filtro-precio" class="filtro-select">
+                            <option value="">Todos los precios</option>
+                            <option value="0-500000">Hasta $500.000</option>
+                            <option value="500000-800000">$500.000 - $800.000</option>
+                            <option value="800000-1200000">$800.000 - $1.200.000</option>
+                            <option value="1200000+">Más de $1.200.000</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filtro-grupo">
+                        <label for="filtro-estado">Estado:</label>
+                        <select id="filtro-estado" class="filtro-select">
+                            <option value="">Todos los estados</option>
+                            <option value="excelente">Excelente</option>
+                            <option value="muy-bueno">Muy Bueno</option>
+                            <option value="bueno">Bueno</option>
+                        </select>
+                    </div>
+                    
+                    <button class="boton-filtrar">Filtrar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección del catálogo de productos -->
+        <section class="seccion-catalogo">
+            <div class="contenedor-catalogo">
+                <!-- Grid de productos del catálogo -->
+                <div class="grid-catalogo">
+                    <!-- iPhone 15 Pro Max -->
+                    <article class="card-producto-catalogo">
+                        <div class="imagen-producto">
+                            <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 15 Pro Max usado en estado excelente" class="img-producto">
+                            <span class="badge-estado excelente">Excelente</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>iPhone 15 Pro Max</h3>
+                            <p class="descripcion-producto">256GB - Titanio Natural</p>
+                            <p class="caracteristicas">• Batería 87% • Sin rayones • Carga original incluida</p>
+                            <p class="precio-producto">$1.450.000</p>
+                            <div class="botones-producto">
+                                <a href="producto.html" class="boton-ver-detalles">Ver Detalles</a>
+                                <button class="boton-favorito">❤️</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone 15 Pro -->
+                    <article class="card-producto-catalogo">
+                        <div class="imagen-producto">
+                            <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 15 Pro usado en estado muy bueno" class="img-producto">
+                            <span class="badge-estado muy-bueno">Muy Bueno</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>iPhone 15 Pro</h3>
+                            <p class="descripcion-producto">128GB - Azul Titanio</p>
+                            <p class="caracteristicas">• Batería 92% • Rayones menores • Accesorios originales</p>
+                            <p class="precio-producto">$1.200.000</p>
+                            <div class="botones-producto">
+                                <a href="producto.html" class="boton-ver-detalles">Ver Detalles</a>
+                                <button class="boton-favorito">❤️</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone 15 -->
+                    <article class="card-producto-catalogo">
+                        <div class="imagen-producto">
+                            <img src="./img/iphone-12.jpeg" alt="iPhone 15 usado en estado excelente" class="img-producto">
+                            <span class="badge-estado excelente">Excelente</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>iPhone 15</h3>
+                            <p class="descripcion-producto">128GB - Rosa</p>
+                            <p class="caracteristicas">• Batería 95% • Sin uso visible • Caja original</p>
+                            <p class="precio-producto">$950.000</p>
+                            <div class="botones-producto">
+                                <a href="producto.html" class="boton-ver-detalles">Ver Detalles</a>
+                                <button class="boton-favorito">❤️</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone 14 Pro Max -->
+                    <article class="card-producto-catalogo">
+                        <div class="imagen-producto">
+                            <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 14 Pro Max usado en estado muy bueno" class="img-producto">
+                            <span class="badge-estado muy-bueno">Muy Bueno</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>iPhone 14 Pro Max</h3>
+                            <p class="descripcion-producto">256GB - Púrpura Oscuro</p>
+                            <p class="caracteristicas">• Batería 89% • Rayones menores • Carga rápida</p>
+                            <p class="precio-producto">$1.100.000</p>
+                            <div class="botones-producto">
+                                <a href="producto.html" class="boton-ver-detalles">Ver Detalles</a>
+                                <button class="boton-favorito">❤️</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone 14 Pro -->
+                    <article class="card-producto-catalogo">
+                        <div class="imagen-producto">
+                            <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 14 Pro usado en estado excelente" class="img-producto">
+                            <span class="badge-estado excelente">Excelente</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>iPhone 14 Pro</h3>
+                            <p class="descripcion-producto">128GB - Oro</p>
+                            <p class="caracteristicas">• Batería 91% • Sin rayones • Protector incluido</p>
+                            <p class="precio-producto">$900.000</p>
+                            <div class="botones-producto">
+                                <a href="producto.html" class="boton-ver-detalles">Ver Detalles</a>
+                                <button class="boton-favorito">❤️</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone 14 -->
+                    <article class="card-producto-catalogo">
+                        <div class="imagen-producto">
+                            <img src="./img/iphone-12.jpeg" alt="iPhone 14 usado en estado bueno" class="img-producto">
+                            <span class="badge-estado bueno">Bueno</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>iPhone 14</h3>
+                            <p class="descripcion-producto">128GB - Azul</p>
+                            <p class="caracteristicas">• Batería 85% • Uso normal • Carga original</p>
+                            <p class="precio-producto">$750.000</p>
+                            <div class="botones-producto">
+                                <a href="producto.html" class="boton-ver-detalles">Ver Detalles</a>
+                                <button class="boton-favorito">❤️</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone 13 Pro Max -->
+                    <article class="card-producto-catalogo">
+                        <div class="imagen-producto">
+                            <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 13 Pro Max usado en estado muy bueno" class="img-producto">
+                            <span class="badge-estado muy-bueno">Muy Bueno</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>iPhone 13 Pro Max</h3>
+                            <p class="descripcion-producto">256GB - Azul Sierra</p>
+                            <p class="caracteristicas">• Batería 88% • Rayones menores • Funda incluida</p>
+                            <p class="precio-producto">$850.000</p>
+                            <div class="botones-producto">
+                                <a href="producto.html" class="boton-ver-detalles">Ver Detalles</a>
+                                <button class="boton-favorito">❤️</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone 13 Pro -->
+                    <article class="card-producto-catalogo">
+                        <div class="imagen-producto">
+                            <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 13 Pro usado en estado excelente" class="img-producto">
+                            <span class="badge-estado excelente">Excelente</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>iPhone 13 Pro</h3>
+                            <p class="descripcion-producto">128GB - Grafito</p>
+                            <p class="caracteristicas">• Batería 94% • Sin uso visible • Accesorios originales</p>
+                            <p class="precio-producto">$720.000</p>
+                            <div class="botones-producto">
+                                <a href="producto.html" class="boton-ver-detalles">Ver Detalles</a>
+                                <button class="boton-favorito">❤️</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone 13 -->
+                    <article class="card-producto-catalogo">
+                        <div class="imagen-producto">
+                            <img src="./img/iphone-12.jpeg" alt="iPhone 13 usado en estado bueno" class="img-producto">
+                            <span class="badge-estado bueno">Bueno</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>iPhone 13</h3>
+                            <p class="descripcion-producto">128GB - Rosa</p>
+                            <p class="caracteristicas">• Batería 82% • Uso normal • Carga rápida</p>
+                            <p class="precio-producto">$580.000</p>
+                            <div class="botones-producto">
+                                <a href="producto.html" class="boton-ver-detalles">Ver Detalles</a>
+                                <button class="boton-favorito">❤️</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone 12 Pro Max -->
+                    <article class="card-producto-catalogo">
+                        <div class="imagen-producto">
+                            <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 12 Pro Max usado en estado muy bueno" class="img-producto">
+                            <span class="badge-estado muy-bueno">Muy Bueno</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>iPhone 12 Pro Max</h3>
+                            <p class="descripcion-producto">128GB - Azul Pacífico</p>
+                            <p class="caracteristicas">• Batería 86% • Rayones menores • Carga MagSafe</p>
+                            <p class="precio-producto">$680.000</p>
+                            <div class="botones-producto">
+                                <a href="producto.html" class="boton-ver-detalles">Ver Detalles</a>
+                                <button class="boton-favorito">❤️</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone 12 Pro -->
+                    <article class="card-producto-catalogo">
+                        <div class="imagen-producto">
+                            <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 12 Pro usado en estado excelente" class="img-producto">
+                            <span class="badge-estado excelente">Excelente</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>iPhone 12 Pro</h3>
+                            <p class="descripcion-producto">256GB - Plata</p>
+                            <p class="caracteristicas">• Batería 90% • Sin rayones • Caja original</p>
+                            <p class="precio-producto">$620.000</p>
+                            <div class="botones-producto">
+                                <a href="producto.html" class="boton-ver-detalles">Ver Detalles</a>
+                                <button class="boton-favorito">❤️</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone 12 -->
+                    <article class="card-producto-catalogo">
+                        <div class="imagen-producto">
+                            <img src="./img/iphone-12.jpeg" alt="iPhone 12 usado en estado bueno" class="img-producto">
+                            <span class="badge-estado bueno">Bueno</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>iPhone 12</h3>
+                            <p class="descripcion-producto">64GB - Negro</p>
+                            <p class="caracteristicas">• Batería 83% • Uso normal • Carga original</p>
+                            <p class="precio-producto">$520.000</p>
+                            <div class="botones-producto">
+                                <a href="producto.html" class="boton-ver-detalles">Ver Detalles</a>
+                                <button class="boton-favorito">❤️</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Paginación -->
+                <div class="paginacion">
+                    <button class="boton-pagina anterior" disabled>← Anterior</button>
+                    <span class="pagina-actual">Página 1 de 2</span>
+                    <button class="boton-pagina siguiente">Siguiente →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de información adicional -->
+        <section class="seccion-info-adicional">
+            <div class="contenedor-info">
+                <div class="info-garantia">
+                    <h3>🛡️ Garantía Total</h3>
+                    <p>Todos nuestros celulares vienen con 6 meses de garantía</p>
+                </div>
+                <div class="info-envio">
+                    <h3>🚚 Envío Gratis</h3>
+                    <p>En compras superiores a $50.000 en todo el país</p>
+                </div>
+                <div class="info-calidad">
+                    <h3>⭐ Calidad Verificada</h3>
+                    <p>Cada dispositivo pasa por rigurosas pruebas</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer con información adicional -->
+    <footer class="pie-pagina">
+        <div class="contenedor-footer">
+            <!-- Información de contacto -->
+            <div class="columna-footer">
+                <h4>Contacto</h4>
+                <p>📞 (3764) 724207</p>
+                <p>📧 uphone@gmail.com</p>
+                <p>📍 Av. Corrientes 1234, Posadas, Misiones, Argentina</p>
+            </div>
+            
+            <!-- Enlaces rápidos -->
+            <div class="columna-footer">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            
+            <!-- Redes sociales -->
+            <div class="columna-footer">
+                <h4>Síguenos</h4>
+                <div class="redes-sociales">
+                    <a href="#" class="red-social">📘 Facebook</a>
+                    <a href="#" class="red-social">📷 Instagram</a>
+                    <a href="#" class="red-social">🐦 Twitter</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="copyright">
+            <p>&copy; 2025 uPhone - Todos los derechos reservados</p>
+            <p>&copy; 2025 <a href="#" class="red-social">WebExperts</a> - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

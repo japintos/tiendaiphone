@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - uPhone | Celulares Usados</title>
+    <meta name="description" content="Contacta con uPhone para consultas sobre celulares usados. Formulario de contacto, teléfono y ubicación en Posadas, Misiones.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    
+    <!-- Google Fonts para mejorar la tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Vinculamos el archivo CSS específico de esta página -->
+    <link rel="stylesheet" href="./css/contacto.css">
+</head>
+<body>
+    <!-- Header principal con logo y navegación -->
+    <header class="cabecera">
+        <div class="contenedor-cabecera">
+            <!-- Logo de la empresa -->
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="./img/logo.png" alt="uPhone - Celulares Usados Premium" class="img-logo">
+                </a>
+            </div>
+            
+            <!-- Menú de navegación principal -->
+            <nav class="navegacion-principal">
+                <ul class="menu">
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="contacto.html" class="activo">Contacto</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="garantias.html">Garantías</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal de la página -->
+    <main class="contenido-principal">
+        <!-- Sección de encabezado del contacto -->
+        <section class="seccion-encabezado">
+            <div class="contenedor-encabezado">
+                <h2 class="titulo-contacto">Contactanos</h2>
+                <p class="subtitulo-contacto">¿Tenés alguna consulta sobre nuestros celulares usados? Estamos acá para ayudarte</p>
+            </div>
+        </section>
+
+        <!-- Sección principal de contacto -->
+        <section class="seccion-contacto">
+            <div class="contenedor-contacto">
+                <!-- Formulario de contacto -->
+                <div class="formulario-contacto">
+                    <h3 class="titulo-formulario">Enviános un Mensaje</h3>
+                    <p class="descripcion-formulario">Completá el formulario y nos pondremos en contacto contigo en menos de 24 horas.</p>
+                    
+                    <form class="formulario" action="#" method="POST">
+                        <!-- Datos personales -->
+                        <div class="grupo-campos">
+                            <div class="campo-formulario">
+                                <label for="nombre">Nombre Completo *</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            
+                            <div class="campo-formulario">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="grupo-campos">
+                            <div class="campo-formulario">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono">
+                            </div>
+                            
+                            <div class="campo-formulario">
+                                <label for="asunto">Asunto *</label>
+                                <select id="asunto" name="asunto" required>
+                                    <option value="">Seleccioná un asunto</option>
+                                    <option value="consulta-producto">Consulta sobre producto</option>
+                                    <option value="soporte-tecnico">Soporte técnico</option>
+                                    <option value="garantia">Consulta sobre garantía</option>
+                                    <option value="venta">Quiero vender mi celular</option>
+                                    <option value="envio">Consulta sobre envíos</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Mensaje -->
+                        <div class="campo-formulario">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Contanos en detalle tu consulta..." required></textarea>
+                        </div>
+                        
+                        <!-- Checkbox de términos -->
+                        <div class="campo-formulario checkbox">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="terminos" required>
+                                <span class="checkmark"></span>
+                                Acepto los <a href="#" class="enlace-terminos">términos y condiciones</a> y la <a href="#" class="enlace-terminos">política de privacidad</a>
+                            </label>
+                        </div>
+                        
+                        <!-- Botón de envío -->
+                        <div class="campo-formulario">
+                            <button type="submit" class="boton-enviar">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Información de contacto -->
+                <div class="info-contacto">
+                    <h3 class="titulo-info">Información de Contacto</h3>
+                    <p class="descripcion-info">También podés contactarnos por estos medios:</p>
+                    
+                    <!-- Datos de contacto -->
+                    <div class="datos-contacto">
+                        <div class="item-contacto">
+                            <div class="icono-contacto">📞</div>
+                            <div class="info-item">
+                                <h4>Teléfono</h4>
+                                <p>(3764) 724207</p>
+                                <span>Lunes a Viernes: 9:00 - 18:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="item-contacto">
+                            <div class="icono-contacto">📧</div>
+                            <div class="info-item">
+                                <h4>Email</h4>
+                                <p>uphone@gmail.com</p>
+                                <span>Respondemos en menos de 24 horas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="item-contacto">
+                            <div class="icono-contacto">📍</div>
+                            <div class="info-item">
+                                <h4>Ubicación</h4>
+                                <p>Av. Corrientes 1234</p>
+                                <span>Posadas, Misiones, Argentina</span>
+                            </div>
+                        </div>
+                        
+                        <div class="item-contacto">
+                            <div class="icono-contacto">📱</div>
+                            <div class="info-item">
+                                <h4>WhatsApp</h4>
+                                <p>(3764) 724207</p>
+                                <span>Respuesta inmediata</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Botón de WhatsApp -->
+                    <div class="whatsapp-rapido">
+                        <a href="https://wa.me/543764724207" class="boton-whatsapp-contacto" target="_blank">
+                            <span class="icono-whatsapp">📱</span>
+                            <div class="texto-whatsapp">
+                                <strong>Chat por WhatsApp</strong>
+                                <span>Respuesta inmediata</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de horarios de atención -->
+        <section class="seccion-horarios">
+            <div class="contenedor-horarios">
+                <h3 class="titulo-horarios">Horarios de Atención</h3>
+                
+                <div class="grid-horarios">
+                    <div class="card-horario">
+                        <h4>Lunes a Viernes</h4>
+                        <p class="horario">9:00 - 18:00</p>
+                        <span class="estado abierto">Abierto</span>
+                    </div>
+                    
+                    <div class="card-horario">
+                        <h4>Sábados</h4>
+                        <p class="horario">9:00 - 13:00</p>
+                        <span class="estado abierto">Abierto</span>
+                    </div>
+                    
+                    <div class="card-horario">
+                        <h4>Domingos</h4>
+                        <p class="horario">Cerrado</p>
+                        <span class="estado cerrado">Cerrado</span>
+                    </div>
+                </div>
+                
+                <div class="info-horarios">
+                    <p><strong>Nota:</strong> Fuera del horario de atención, podés enviarnos un mensaje por WhatsApp y te responderemos a la brevedad.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer con información adicional -->
+    <footer class="pie-pagina">
+        <div class="contenedor-footer">
+            <!-- Información de contacto -->
+            <div class="columna-footer">
+                <h4>Contacto</h4>
+                <p>📞 (3764) 724207</p>
+                <p>📧 uphone@gmail.com</p>
+                <p>📍 Av. Corrientes 1234, Posadas, Misiones, Argentina</p>
+            </div>
+            
+            <!-- Enlaces rápidos -->
+            <div class="columna-footer">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            
+            <!-- Redes sociales -->
+            <div class="columna-footer">
+                <h4>Síguenos</h4>
+                <div class="redes-sociales">
+                    <a href="#" class="red-social">📘 Facebook</a>
+                    <a href="#" class="red-social">📷 Instagram</a>
+                    <a href="#" class="red-social">🐦 Twitter</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="copyright">
+            <p>&copy; 2025 uPhone - Todos los derechos reservados</p>
+            <p>&copy; 2025 <a href="#" class="red-social">WebExperts</a> - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

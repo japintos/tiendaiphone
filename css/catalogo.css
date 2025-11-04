@@ -1,0 +1,701 @@
+/* ===== RESET Y CONFIGURACIÓN BÁSICA ===== */
+/* Eliminamos márgenes y padding por defecto para tener control total */
+* {
+    margin: 5;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración del body con fuente de Google Fonts */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    /* Suavizamos el texto para mejor legibilidad */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== LAYOUT PRINCIPAL CON CSS GRID ===== */
+/* Definimos el grid principal usando grid-template-areas */
+body {
+    display: grid;
+    grid-template-areas: 
+        "cabecera"
+        "contenido-principal"
+        "pie-pagina";
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* Asignamos las áreas del grid */
+.cabecera {
+    grid-area: cabecera;
+}
+
+.contenido-principal {
+    grid-area: contenido-principal;
+}
+
+.pie-pagina {
+    grid-area: pie-pagina;
+}
+
+/* ===== VARIABLES CSS PARA COLORES ===== */
+:root {
+    /* Colores principales siguiendo jerarquía visual */
+    --color-primario: #1e3a8a;      /* Azul oscuro profesional */
+    --color-secundario: #f97316;     /* Naranja suave para destacar */
+    --color-fondo: #f8f9fa;          /* Fondo claro y neutro */
+    --color-texto: #333333;          /* Texto principal oscuro */
+    --color-texto-claro: #666666;    /* Texto secundario */
+    --color-blanco: #ffffff;
+    --color-gris-claro: #e5e7eb;
+    --color-gris-medio: #9ca3af;
+    
+    /* Colores para badges de estado */
+    --color-excelente: #10b981;      /* Verde para excelente */
+    --color-muy-bueno: #3b82f6;      /* Azul para muy bueno */
+    --color-bueno: #f59e0b;          /* Amarillo para bueno */
+    
+    /* Sombras para profundidad visual */
+    --sombra-suave: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --sombra-fuerte: 0 8px 16px rgba(0, 0, 0, 0.2);
+    
+    /* Transiciones suaves */
+    --transicion-rapida: 0.2s ease;
+    --transicion-media: 0.3s ease;
+}
+
+/* ===== CABECERA ===== */
+.cabecera {
+    background: var(--color-blanco);
+    box-shadow: var(--sombra-suave);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.contenedor-cabecera {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo y enlace */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    text-decoration: none;
+    transition: all var(--transicion-rapida);
+}
+
+.logo-link:hover {
+    transform: scale(1.05);
+}
+
+.img-logo {
+    height: 70px;
+    width: auto;
+    transition: all var(--transicion-rapida);
+}
+
+/* Navegación principal */
+.navegacion-principal {
+    /* Usamos flexbox para organizar el menú horizontalmente */
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all var(--transicion-rapida);
+    position: relative;
+}
+
+.menu a:hover {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+
+.menu a.activo {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+}
+
+/* ===== SECCIÓN ENCABEZADO DEL CATÁLOGO ===== */
+.seccion-encabezado {
+    background: linear-gradient(135deg, var(--color-primario) 0%, #3b82f6 100%);
+    color: var(--color-blanco);
+    padding: 3rem 2rem;
+}
+
+.contenedor-encabezado {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titulo-catalogo {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.subtitulo-catalogo {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* ===== FILTROS DE BÚSQUEDA ===== */
+.filtros-busqueda {
+    background: var(--color-blanco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-media);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: end;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.filtro-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filtro-grupo label {
+    font-weight: 600;
+    color: var(--color-texto);
+    font-size: 0.9rem;
+}
+
+.filtro-select {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--color-gris-claro);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--color-texto);
+    background: var(--color-blanco);
+    transition: all var(--transicion-rapida);
+    min-width: 180px;
+}
+
+.filtro-select:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.boton-filtrar {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transicion-rapida);
+    font-size: 1rem;
+}
+
+.boton-filtrar:hover {
+    background-color: #ea580c;
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-media);
+}
+
+/* ===== SECCIÓN CATÁLOGO ===== */
+.seccion-catalogo {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenedor-catalogo {
+    /* Contenedor para el catálogo */
+}
+
+/* ===== GRID DEL CATÁLOGO ===== */
+.grid-catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.card-producto-catalogo {
+    background: var(--color-blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    transition: all var(--transicion-media);
+    position: relative;
+}
+
+.card-producto-catalogo:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-media);
+}
+
+.imagen-producto {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--color-gris-claro);
+}
+
+.img-producto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    transition: transform var(--transicion-media);
+}
+
+.card-producto-catalogo:hover .img-producto {
+    transform: scale(1.05);
+}
+
+/* Badge de estado del producto */
+.badge-estado {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-blanco);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-estado.excelente {
+    background-color: var(--color-excelente);
+}
+
+.badge-estado.muy-bueno {
+    background-color: var(--color-muy-bueno);
+}
+
+.badge-estado.bueno {
+    background-color: var(--color-bueno);
+}
+
+.info-producto {
+    padding: 1.5rem;
+}
+
+.info-producto h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-bottom: 0.5rem;
+}
+
+.descripcion-producto {
+    color: var(--color-texto-claro);
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.caracteristicas {
+    color: var(--color-texto-claro);
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.precio-producto {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-secundario);
+    margin-bottom: 1.5rem;
+}
+
+/* Botones del producto */
+.botones-producto {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.boton-ver-detalles {
+    flex: 1;
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    transition: all var(--transicion-rapida);
+    font-size: 0.9rem;
+}
+
+.boton-ver-detalles:hover {
+    background-color: #1e40af;
+    transform: translateY(-2px);
+}
+
+.boton-favorito {
+    background-color: var(--color-gris-claro);
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all var(--transicion-rapida);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton-favorito:hover {
+    background-color: #fee2e2;
+    color: #dc2626;
+    transform: scale(1.1);
+}
+
+/* ===== PAGINACIÓN ===== */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.boton-pagina {
+    background-color: var(--color-blanco);
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transicion-rapida);
+}
+
+.boton-pagina:hover:not(:disabled) {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+
+.boton-pagina:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagina-actual {
+    font-weight: 600;
+    color: var(--color-texto);
+    padding: 0.75rem 1rem;
+}
+
+/* ===== SECCIÓN INFORMACIÓN ADICIONAL ===== */
+.seccion-info-adicional {
+    background-color: var(--color-gris-claro);
+    padding: 3rem 2rem;
+}
+
+.contenedor-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.info-garantia,
+.info-envio,
+.info-calidad {
+    background: var(--color-blanco);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+    transition: all var(--transicion-media);
+}
+
+.info-garantia:hover,
+.info-envio:hover,
+.info-calidad:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-media);
+}
+
+.info-garantia h3,
+.info-envio h3,
+.info-calidad h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.info-garantia p,
+.info-envio p,
+.info-calidad p {
+    color: var(--color-texto-claro);
+    line-height: 1.6;
+}
+
+/* ===== FOOTER ===== */
+.pie-pagina {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 3rem 2rem 1rem;
+}
+
+.contenedor-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.columna-footer h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-blanco);
+}
+
+.columna-footer p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.columna-footer ul {
+    list-style: none;
+}
+
+.columna-footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.columna-footer a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity var(--transicion-rapida);
+}
+
+.columna-footer a:hover {
+    opacity: 1;
+    color: var(--color-secundario);
+}
+
+.redes-sociales {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.red-social {
+    font-size: 0.9rem;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0.8;
+}
+
+/* ===== MEDIA QUERIES PARA RESPONSIVE DESIGN ===== */
+
+/* Tablets (768px y menos) */
+@media (max-width: 768px) {
+    .contenedor-cabecera {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .titulo-catalogo {
+        font-size: 2.5rem;
+    }
+    
+    .subtitulo-catalogo {
+        font-size: 1.1rem;
+    }
+    
+    .filtros-busqueda {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .filtro-grupo {
+        width: 100%;
+    }
+    
+    .filtro-select {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .grid-catalogo {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contenedor-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .contenedor-footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* Móviles (480px y menos) */
+@media (max-width: 480px) {
+    .contenedor-cabecera {
+        padding: 0.75rem;
+    }
+    
+    .img-logo {
+        height: 56px;
+    }
+    
+    .menu {
+        gap: 0.5rem;
+    }
+    
+    .menu a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .seccion-encabezado {
+        padding: 2rem 1rem;
+    }
+    
+    .titulo-catalogo {
+        font-size: 2rem;
+    }
+    
+    .filtros-busqueda {
+        padding: 1.5rem;
+    }
+    
+    .seccion-catalogo {
+        padding: 2rem 1rem;
+    }
+    
+    .info-producto {
+        padding: 1rem;
+    }
+    
+    .botones-producto {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .boton-favorito {
+        align-self: center;
+    }
+    
+    .paginacion {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .seccion-info-adicional {
+        padding: 2rem 1rem;
+    }
+    
+    .pie-pagina {
+        padding: 2rem 1rem 1rem;
+    }
+}
+
+/* ===== MEJORAS DE ACCESIBILIDAD ===== */
+
+/* Enfoque visible para navegación por teclado */
+.menu a:focus,
+.boton-filtrar:focus,
+.boton-ver-detalles:focus,
+.boton-favorito:focus,
+.boton-pagina:focus {
+    outline: 3px solid var(--color-secundario);
+    outline-offset: 2px;
+}
+
+/* Mejoramos el contraste para textos */
+@media (prefers-contrast: high) {
+    :root {
+        --color-texto: #000000;
+        --color-texto-claro: #333333;
+    }
+}
+
+/* Animaciones reducidas para usuarios que las prefieren */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== COMENTARIOS FINALES ===== */
+/* 
+Este CSS implementa:
+✅ Grid con grid-template-areas para layout principal
+✅ Flexbox para elementos internos (filtros, botones, etc.)
+✅ Media queries para diseño responsive
+✅ Efectos hover y transiciones suaves
+✅ Google Fonts para tipografía
+✅ Jerarquía visual clara con tamaños de fuente
+✅ Jerarquía de colores con variables CSS
+✅ Badges de estado con colores diferenciados
+✅ Contraste suficiente para accesibilidad
+✅ Enfoque visible para navegación por teclado
+✅ Soporte para usuarios con preferencias de accesibilidad
+✅ Grid responsive para productos del catálogo
+✅ Sistema de filtros estilizado
+*/

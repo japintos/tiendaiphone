@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - uPhone | Celulares Usados</title>
+    <meta name="description" content="Finaliza tu compra de celulares usados en uPhone. Carrito con productos seleccionados, envío gratis y garantía incluida.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    
+    <!-- Google Fonts para mejorar la tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Vinculamos el archivo CSS específico de esta página -->
+    <link rel="stylesheet" href="./css/carrito.css">
+</head>
+<body>
+    <!-- Header principal con logo y navegación -->
+    <header class="cabecera">
+        <div class="contenedor-cabecera">
+            <!-- Logo de la empresa -->
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="./img/logo.png" alt="uPhone - Celulares Usados Premium" class="img-logo">
+                </a>
+            </div>
+            
+            <!-- Menú de navegación principal -->
+            <nav class="navegacion-principal">
+                <ul class="menu">
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="garantias.html">Garantías</a></li>
+                    <li><a href="carrito.html" class="activo">Carrito</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal de la página -->
+    <main class="contenido-principal">
+        <!-- Breadcrumb para navegación -->
+        <section class="breadcrumb">
+            <div class="contenedor-breadcrumb">
+                <a href="index.html">Inicio</a> > 
+                <a href="catalogo.html">Catálogo</a> > 
+                <span>Carrito de Compras</span>
+            </div>
+        </section>
+
+        <!-- Sección de encabezado del carrito -->
+        <section class="seccion-encabezado">
+            <div class="contenedor-encabezado">
+                <h2 class="titulo-carrito">🛒 Tu Carrito de Compras</h2>
+                <p class="subtitulo-carrito">Revisá tus productos y completá tu compra de forma segura</p>
+            </div>
+        </section>
+
+        <!-- Sección principal del carrito -->
+        <section class="seccion-carrito">
+            <div class="contenedor-carrito">
+                <!-- Productos en el carrito -->
+                <div class="productos-carrito">
+                    <h3 class="titulo-productos">Productos Seleccionados</h3>
+                    
+                    <!-- Producto 1 -->
+                    <article class="item-carrito">
+                        <div class="imagen-producto-carrito">
+                            <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 13 Pro usado en estado excelente" class="img-producto-carrito">
+                        </div>
+                        <div class="info-producto-carrito">
+                            <h4>iPhone 13 Pro</h4>
+                            <p class="descripcion-carrito">128GB - Grafito - Estado: Excelente</p>
+                            <p class="caracteristicas-carrito">• Batería 94% • Sin rayones • Accesorios originales</p>
+                        </div>
+                        <div class="cantidad-producto">
+                            <label for="cantidad1">Cantidad:</label>
+                            <input type="number" id="cantidad1" value="1" min="1" readonly>
+                        </div>
+                        <div class="precio-producto">
+                            <span class="precio-unitario">$720.000</span>
+                            <span class="precio-total-item">$720.000</span>
+                        </div>
+                        <div class="acciones-producto">
+                            <button class="boton-eliminar" title="Eliminar producto">🗑️</button>
+                        </div>
+                    </article>
+
+                    <!-- Producto 2 -->
+                    <article class="item-carrito">
+                        <div class="imagen-producto-carrito">
+                            <img src="./img/iphone-12.jpeg" alt="iPhone 12 usado en estado bueno" class="img-producto-carrito">
+                        </div>
+                        <div class="info-producto-carrito">
+                            <h4>iPhone 12</h4>
+                            <p class="descripcion-carrito">64GB - Negro - Estado: Bueno</p>
+                            <p class="caracteristicas-carrito">• Batería 83% • Uso normal • Carga original</p>
+                        </div>
+                        <div class="cantidad-producto">
+                            <label for="cantidad2">Cantidad:</label>
+                            <input type="number" id="cantidad2" value="1" min="1" readonly>
+                        </div>
+                        <div class="precio-producto">
+                            <span class="precio-unitario">$520.000</span>
+                            <span class="precio-total-item">$520.000</span>
+                        </div>
+                        <div class="acciones-producto">
+                            <button class="boton-eliminar" title="Eliminar producto">🗑️</button>
+                        </div>
+                    </article>
+
+                    <!-- Botones de acción del carrito -->
+                    <div class="acciones-carrito">
+                        <a href="catalogo.html" class="boton-seguir-comprando">← Seguir Comprando</a>
+                        <button class="boton-vaciar-carrito">Vaciar Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Resumen y checkout -->
+                <div class="resumen-checkout">
+                    <!-- Resumen de compra -->
+                    <div class="resumen-compra">
+                        <h3 class="titulo-resumen">Resumen de Compra</h3>
+                        
+                        <div class="desglose-precios">
+                            <div class="linea-precio">
+                                <span>Subtotal (2 productos):</span>
+                                <span>$1.240.000</span>
+                            </div>
+                            <div class="linea-precio descuento">
+                                <span>Descuento por compra mayorista:</span>
+                                <span>-$50.000</span>
+                            </div>
+                            <div class="linea-precio envio">
+                                <span>Envío:</span>
+                                <span class="gratis">GRATIS</span>
+                            </div>
+                            <div class="linea-precio garantia">
+                                <span>Garantía extendida (6 meses):</span>
+                                <span class="incluido">INCLUIDA</span>
+                            </div>
+                            <hr class="separador-total">
+                            <div class="linea-precio total">
+                                <span><strong>Total a pagar:</strong></span>
+                                <span class="precio-final"><strong>$1.190.000</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- Información adicional -->
+                        <div class="info-adicional-carrito">
+                            <div class="info-item">
+                                <span class="icono">🛡️</span>
+                                <span>Garantía de 6 meses incluida</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icono">🚚</span>
+                                <span>Envío gratis en todo el país</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icono">💳</span>
+                                <span>Hasta 12 cuotas sin interés</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icono">🔒</span>
+                                <span>Compra 100% segura</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de checkout -->
+                    <div class="formulario-checkout">
+                        <h3 class="titulo-checkout">Finalizar Compra</h3>
+                        <p class="descripcion-checkout">Completá tus datos para procesar el pedido</p>
+                        
+                        <form class="formulario-compra" action="#" method="POST">
+                            <!-- Datos personales -->
+                            <div class="grupo-campos">
+                                <div class="campo-formulario">
+                                    <label for="nombre">Nombre Completo *</label>
+                                    <input type="text" id="nombre" name="nombre" required>
+                                </div>
+                                
+                                <div class="campo-formulario">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="grupo-campos">
+                                <div class="campo-formulario">
+                                    <label for="telefono">Teléfono *</label>
+                                    <input type="tel" id="telefono" name="telefono" required>
+                                </div>
+                                
+                                <div class="campo-formulario">
+                                    <label for="dni">DNI *</label>
+                                    <input type="text" id="dni" name="dni" required>
+                                </div>
+                            </div>
+
+                            <!-- Dirección de envío -->
+                            <div class="campo-formulario">
+                                <label for="direccion">Dirección de Envío *</label>
+                                <input type="text" id="direccion" name="direccion" placeholder="Calle, número, barrio" required>
+                            </div>
+                            
+                            <div class="grupo-campos">
+                                <div class="campo-formulario">
+                                    <label for="ciudad">Ciudad *</label>
+                                    <input type="text" id="ciudad" name="ciudad" required>
+                                </div>
+                                
+                                <div class="campo-formulario">
+                                    <label for="codigo-postal">Código Postal</label>
+                                    <input type="text" id="codigo-postal" name="codigo-postal">
+                                </div>
+                            </div>
+
+                            <!-- Método de pago -->
+                            <div class="campo-formulario">
+                                <label for="metodo-pago">Método de Pago *</label>
+                                <select id="metodo-pago" name="metodo-pago" required>
+                                    <option value="">Seleccioná método de pago</option>
+                                    <option value="efectivo">Efectivo contra entrega</option>
+                                    <option value="transferencia">Transferencia bancaria</option>
+                                    <option value="tarjeta">Tarjeta de crédito/débito</option>
+                                    <option value="cuotas">Financiación en cuotas</option>
+                                </select>
+                            </div>
+
+                            <!-- Observaciones -->
+                            <div class="campo-formulario">
+                                <label for="observaciones">Observaciones</label>
+                                <textarea id="observaciones" name="observaciones" rows="3" placeholder="Alguna instrucción especial para la entrega..."></textarea>
+                            </div>
+
+                            <!-- Checkbox de términos -->
+                            <div class="campo-formulario checkbox">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="terminos" required>
+                                    <span class="checkmark"></span>
+                                    Acepto los <a href="garantias.html" class="enlace-terminos">términos y condiciones</a> y la política de privacidad
+                                </label>
+                            </div>
+
+                            <!-- Botón de finalizar compra -->
+                            <div class="campo-formulario">
+                                <button type="submit" class="boton-finalizar-compra">Finalizar Compra</button>
+                            </div>
+                        </form>
+
+                        <!-- Información de contacto para dudas -->
+                        <div class="contacto-compra">
+                            <h4>¿Tenés dudas sobre tu compra?</h4>
+                            <p>Contactanos por WhatsApp para asistencia inmediata</p>
+                            <a href="https://wa.me/543764724207" class="boton-whatsapp-carrito" target="_blank">
+                                📱 Consultar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de información de seguridad -->
+        <section class="seccion-seguridad">
+            <div class="contenedor-seguridad">
+                <h3 class="titulo-seguridad">Tu Compra es 100% Segura</h3>
+                <p class="descripcion-seguridad">Protegemos tus datos y garantizamos la entrega</p>
+                
+                <div class="grid-seguridad">
+                    <div class="card-seguridad">
+                        <div class="icono-seguridad">🔒</div>
+                        <h4>Datos Protegidos</h4>
+                        <p>Tus datos personales están completamente protegidos y no serán compartidos con terceros.</p>
+                    </div>
+                    
+                    <div class="card-seguridad">
+                        <div class="icono-seguridad">📦</div>
+                        <h4>Entrega Garantizada</h4>
+                        <p>Garantizamos la entrega de tu pedido en perfectas condiciones o te devolvemos el dinero.</p>
+                    </div>
+                    
+                    <div class="card-seguridad">
+                        <div class="icono-seguridad">🛡️</div>
+                        <h4>Garantía Total</h4>
+                        <p>6 meses de garantía completa en todos los dispositivos sin excepciones.</p>
+                    </div>
+                    
+                    <div class="card-seguridad">
+                        <div class="icono-seguridad">💳</div>
+                        <h4>Pagos Seguros</h4>
+                        <p>Múltiples métodos de pago seguros y confiables para tu tranquilidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer con información adicional -->
+    <footer class="pie-pagina">
+        <div class="contenedor-footer">
+            <!-- Información de contacto -->
+            <div class="columna-footer">
+                <h4>Contacto</h4>
+                <p>📞 (3764) 724207</p>
+                <p>📧 uphone@gmail.com</p>
+                <p>📍 Av. Corrientes 1234, Posadas, Misiones, Argentina</p>
+            </div>
+            
+            <!-- Enlaces rápidos -->
+            <div class="columna-footer">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="garantias.html">Garantías</a></li>
+                </ul>
+            </div>
+            
+            <!-- Redes sociales -->
+            <div class="columna-footer">
+                <h4>Síguenos</h4>
+                <div class="redes-sociales">
+                    <a href="#" class="red-social">📘 Facebook</a>
+                    <a href="#" class="red-social">📷 Instagram</a>
+                    <a href="#" class="red-social">🐦 Twitter</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="copyright">
+            <p>&copy; 2025 uPhone - Todos los derechos reservados</p>
+            <p>&copy; 2025 <a href="#" class="red-social">WebExperts</a> - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
