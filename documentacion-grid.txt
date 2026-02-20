@@ -1,0 +1,288 @@
+uPhone - Documentación de uso de Grid, variables y maquetado
+============================================================
+
+
+PARTE I - CONCEPTOS BÁSICOS
+============================
+
+¿Qué es HTML?
+-------------
+HTML (HyperText Markup Language, Lenguaje de Marcado de Hipertexto) es el lenguaje estándar con el que se describe la estructura y el contenido de una página web. No es un lenguaje de programación: es un lenguaje de marcado que usa "etiquetas" (tags) para indicar al navegador qué tipo de elemento es cada parte (título, párrafo, enlace, imagen, lista, etc.). El navegador interpreta el HTML y lo muestra en pantalla. En este proyecto, cada archivo .html (index.html, catalogo.html, etc.) es un documento HTML que define la estructura de una página: cabecera, menú, secciones de contenido y pie.
+
+
+¿Qué es HTML5?
+---------------
+HTML5 es la quinta versión importante del estándar HTML. Introduce etiquetas semánticas que describen mejor el significado del contenido, lo que mejora la accesibilidad y el SEO. En uPhone usamos, entre otras:
+- <header>: cabecera del sitio (logo y navegación).
+- <main>: contenido principal de la página.
+- <section>: bloques temáticos (hero, características, productos, etc.).
+- <article>: contenido autocontenido (cada card de producto, testimonio).
+- <nav>: menú de navegación.
+- <footer>: pie de página.
+También se usan <meta charset="UTF-8"> para caracteres en español, <meta name="viewport"> para diseño responsive y atributos como required en formularios. HTML5 permite trabajar sin plugins externos para multimedia y ofrece una base estable para CSS y JavaScript.
+
+
+¿Qué es CSS?
+------------
+CSS (Cascading Style Sheets, Hojas de Estilo en Cascada) es el lenguaje que define la presentación visual de un documento HTML: colores, fuentes, tamaños, disposición en pantalla (layout), márgenes, bordes, sombras, animaciones, etc. El HTML dice "esto es un título" o "esto es un botón"; el CSS dice "cómo se ve ese título o ese botón". En uPhone hay una hoja base (base.css) compartida por todas las páginas y hojas específicas (inicio.css, catalogo.css, etc.) para cada vista. CSS permite separar contenido (HTML) de presentación (CSS), lo que facilita mantener y cambiar el diseño sin tocar el contenido.
+
+
+Unidades de medida utilizadas en el proyecto
+--------------------------------------------
+En CSS hace falta indicar tamaños (ancho, alto, márgenes, fuentes). En uPhone se usan estas unidades y por qué:
+
+- rem (root em): 1rem = tamaño de fuente del elemento raíz (<html>). Se usa para padding, margin, font-size, gap, border-radius, etc. Ventaja: si el usuario cambia el tamaño de fuente del navegador, todo escala de forma proporcional (accesibilidad y consistencia). Ejemplo: padding: 1rem 2rem; font-size: 1.25rem;
+
+- px (píxeles): unidad fija respecto a la pantalla. Se usa cuando queremos un valor exacto que no escale con la fuente: bordes (1px, 2px), sombras (0 2px 4px), alturas de logo (70px, 56px en móvil), anchos fijos (80px para miniaturas). También en media queries (768px, 480px) para definir breakpoints.
+
+- % (porcentaje): relativo al elemento padre. Se usa en width: 100% para que un elemento ocupe todo el ancho disponible, o en gradientes (0%, 100%). Útil para layouts fluidos.
+
+- fr (fracción, solo en CSS Grid): unidad de Grid que representa una fracción del espacio libre. 1fr = una parte del espacio; 2fr 1fr = dos columnas donde la primera ocupa el doble que la segunda. Se usa en grid-template-columns (p. ej. 2fr 1fr en contacto y carrito) y en repeat(auto-fit, minmax(250px, 1fr)) para columnas que se reparten el espacio de forma flexible.
+
+- vh (viewport height): 1vh = 1% de la altura de la ventana del navegador. min-height: 100vh en el body hace que la página ocupe al menos toda la altura visible, dejando el footer abajo en pantallas largas.
+
+- auto: el navegador calcula el valor (p. ej. margin: 0 auto para centrar bloques; width: auto; height: auto en imágenes para mantener proporción).
+
+Resumen: rem para espaciados y tipografía escalable; px para valores fijos y breakpoints; % y fr para distribuir espacio; vh para altura de pantalla; auto para centrado y tamaños automáticos.
+
+
+¿Qué es CSS Grid y por qué lo usamos?
+-------------------------------------
+CSS Grid es un sistema de layout bidimensional: define filas y columnas a la vez y permite colocar los elementos en celdas de esa cuadrícula. En uPhone lo usamos por:
+1) Layout principal de la página: el body es un grid de tres áreas (cabecera, contenido-principal, pie-pagina) con grid-template-rows: auto 1fr auto, de modo que la cabecera y el pie tienen su altura natural y el contenido central ocupa el resto (1fr), manteniendo el footer abajo aunque haya poco contenido.
+2) Secciones de contenido: grids con repeat(auto-fit, minmax(250px, 1fr)) para cards (características, productos, testimonios, etc.) que se reorganizan solas en una o varias columnas según el ancho de pantalla, sin necesidad de calcular porcentajes a mano.
+3) Pie de página y formularios: varias columnas (p. ej. repeat(auto-fit, minmax(250px, 1fr)) en el footer; 2fr 1fr o 1fr 1fr en contenedores de dos columnas).
+Grid nos da control claro sobre la estructura global y las rejillas de contenido, y se combina con Flexbox para alinear ítems dentro de cada celda (menús, botones, badges).
+
+
+¿Qué son las variables CSS?
+----------------------------
+Las variables CSS (custom properties) son valores que se definen una vez y se reutilizan en toda la hoja. En uPhone se declaran en :root (el elemento raíz) con la sintaxis --nombre: valor; y se usan con var(--nombre). Ejemplos: --color-primario: #1e3a8a; --sombra-suave: 0 2px 4px rgba(0,0,0,0.1); --transicion-rapida: 0.2s ease;. Luego en cualquier regla se escribe background: var(--color-primario); o transition: all var(--transicion-rapida);. Ventajas: un solo lugar para cambiar la paleta o las transiciones; consistencia en colores y tiempos; menos repetición de código. En base.css están las variables de colores, sombras y transiciones; las hojas específicas las reutilizan y, si hace falta, definen variables propias (p. ej. estados o badges).
+
+
+¿Qué es Flexbox y por qué lo usamos?
+------------------------------------
+Flexbox (Flexible Box Layout) es un modelo de layout unidimensional: organiza los elementos en una fila o en una columna y controla cómo se reparten el espacio y se alinean. En uPhone lo usamos para:
+1) Cabecera: el contenedor del header tiene display: flex; justify-content: space-between; align-items: center; para poner logo a la izquierda y menú a la derecha en una sola fila, alineados verticalmente.
+2) Menús y botones: los ítems del menú (ul.menu) son display: flex con gap para separarlos; los botones dentro de una card pueden ser flex para alinearlos en fila.
+3) Hero y bloques en fila: la sección hero usa flex para colocar texto e imagen en dos columnas (flex: 1 cada uno) y alinear al centro (align-items: center).
+4) Redes sociales y grupos de controles: flex-direction: column y gap para apilar enlaces o controles.
+Flexbox es ideal para alineaciones en una dirección (fila o columna); Grid se usa para la cuadrícula general de la página y de las secciones. Ambos se complementan.
+
+
+PARTE II - GLOSARIO DE SENTENCIAS Y PROPIEDADES
+================================================
+(Propiedades y valores usados en el proyecto, con breve explicación.)
+
+--- HTML (etiquetas y atributos) ---
+
+<!DOCTYPE html>          Indica que el documento sigue el estándar HTML5.
+<html lang="es">         Raíz del documento; lang="es" ayuda a accesibilidad y SEO.
+<meta charset="UTF-8">   Codificación de caracteres (permite ñ, tildes, etc.).
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  Necesario para que el diseño se adapte a móviles (responsive).
+<link rel="stylesheet" href="...">  Enlaza un archivo CSS externo.
+class="nombre"           Asigna una clase para aplicar estilos CSS a ese elemento.
+id="nombre"              Identificador único; se usa en labels (for="nombre") y en formularios.
+required                 Atributo en inputs/select: el campo es obligatorio al enviar el formulario.
+alt="texto"              Texto alternativo de una imagen (accesibilidad y SEO).
+target="_blank"          Abre el enlace (p. ej. WhatsApp) en una nueva pestaña.
+
+--- CSS - Display y layout ---
+
+display: grid;           El elemento se comporta como contenedor Grid; sus hijos se colocan en celdas.
+display: flex;           El elemento se comporta como contenedor Flexbox; sus hijos se distribuyen en fila o columna.
+display: block;         El elemento ocupa todo el ancho y va en una nueva línea (comportamiento por defecto de div, p).
+display: inline-block;  Como inline pero se pueden dar width, height y margin (p. ej. botones).
+
+grid-template-areas: "cabecera" "contenido-principal" "pie-pagina";  Nombra las áreas del grid (una por fila en este caso).
+grid-template-rows: auto 1fr auto;  Tres filas: altura automática, flexible (ocupa el resto), automática.
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  Columnas que caben según espacio; cada una mínimo 250px y reparten espacio (1fr).
+grid-template-columns: 2fr 1fr;     Dos columnas: la primera ocupa el doble de espacio que la segunda.
+grid-area: cabecera;     Asigna este elemento al área nombrada "cabecera" del grid.
+grid-column: 1 / -1;     El elemento abarca desde la primera hasta la última columna (útil en responsive).
+gap: 2rem;              Espacio entre filas y columnas en Grid o entre ítems en Flexbox (evita márgenes a mano).
+
+justify-content: space-between;  En Flexbox: reparte el espacio entre los ítems (primero al inicio, último al final).
+justify-content: center;         Centra los ítems en el eje principal.
+align-items: center;    En Flexbox: alinea los ítems en el eje transversal (p. ej. centrado vertical en una fila).
+flex-direction: column;  Los ítems del Flex se apilan en columna en lugar de en fila.
+flex: 1;                El elemento crece para ocupar el espacio disponible (p. ej. en hero: texto e imagen reparten el ancho).
+flex-wrap: wrap;         Si no caben en una fila, los ítems pasan a la siguiente.
+
+--- CSS - Posicionamiento ---
+
+position: sticky;        El elemento se comporta como relativo hasta que, al hacer scroll, llega a top/bottom y entonces "se pega" (queda fijo en esa posición). Usado en cabecera y panel de compra.
+position: relative;     El elemento mantiene su lugar; sirve de referencia para posicionar hijos con position: absolute.
+position: absolute;     Se posiciona respecto al ancestro posicionado más cercano (p. ej. pseudo-elementos o badges).
+top: 0;  left: 50%;     Desplazamiento desde el borde superior o izquierdo (usado con position).
+z-index: 100;           Orden de apilamiento: valores altos quedan por encima; la cabecera va por encima del contenido.
+
+--- CSS - Box model y espaciado ---
+
+margin: 0 auto;         Márgenes superior e inferior 0; izquierdo y derecho automáticos → centra el bloque horizontalmente.
+padding: 1rem 2rem;     Espacio interno: 1rem arriba/abajo, 2rem izquierda/derecha.
+box-sizing: border-box; El width/height incluyen padding y borde (no se suman por fuera); evita sorpresas en layouts.
+max-width: 1200px;      El elemento no supera 1200px de ancho; en pantallas más grandes queda centrado con margin: 0 auto.
+min-height: 100vh;      La altura mínima es el 100% de la altura de la ventana (viewport).
+
+--- CSS - Tipografía y color ---
+
+font-family: 'Inter', sans-serif;  Familia de fuente; Inter se carga desde Google Fonts.
+font-size: 1.25rem;     Tamaño de fuente en rem (escalable).
+font-weight: 600;       Grosor del trazo (400 normal, 600 semibold, 700 bold).
+line-height: 1.6;      Interlineado (legibilidad).
+color: #333;            Color del texto (hex).
+color: var(--color-primario);  Color usando variable CSS.
+background-color: #f8f9fa;  Fondo sólido.
+background: linear-gradient(135deg, color1 0%, color2 100%);  Fondo con gradiente (usado en hero y encabezados).
+opacity: 0.9;          Transparencia del elemento (0 a 1).
+
+--- CSS - Efectos visuales ---
+
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  Sombra: desplazamiento x y, difuminado, color con transparencia. Da profundidad a cards y cabecera.
+border-radius: 8px;     Esquinas redondeadas (en px o rem).
+border: 2px solid #e5e7eb;  Borde sólido (grosor, estilo, color).
+outline: 3px solid var(--color-secundario);  Contorno visible (no ocupa espacio); se usa en :focus para accesibilidad.
+outline-offset: 2px;   Separa el outline del borde del elemento.
+
+--- CSS - Transformaciones y transiciones ---
+
+transform: translateY(-3px);  Desplaza el elemento 3 píxeles hacia arriba (efecto "flotar" en hover de botones y cards).
+transform: translateX(-50%);   Desplaza a la izquierda un 50% de su propio ancho; útil para centrar con left: 50% (p. ej. pseudo-elementos).
+transform: scale(1.05);      Escala el elemento al 105% (efecto de acercamiento en hover del logo o íconos).
+transition: all var(--transicion-media);  Aplica una transición suave a todas las propiedades que cambien (duración y curva definidas en variable, p. ej. 0.3s ease).
+transition: transform var(--transicion-rapida);  Solo la propiedad transform se anima (más ligero que "all").
+transition: opacity var(--transicion-rapida);  Solo cambia la opacidad de forma suave (enlaces del footer).
+Por qué: dan feedback visual al usuario (hover, focus) sin JavaScript; las variables unifican duración y curva en todo el sitio.
+
+--- CSS - Pseudo-clases y pseudo-elementos ---
+
+:hover                   Estilos cuando el usuario pasa el mouse sobre el elemento (botones, enlaces, cards).
+:focus                   Estilos cuando el elemento tiene el foco (teclado o clic); outline visible mejora accesibilidad.
+::after                  Crea un pseudo-elemento después del contenido (p. ej. línea decorativa bajo títulos con content: ''; y estilos).
+:root                    Selector del elemento raíz (html); aquí se definen las variables CSS globales.
+
+--- CSS - Media queries y accesibilidad ---
+
+@media (max-width: 768px) { ... }   Reglas que solo aplican cuando el ancho de pantalla es 768px o menos (tablets y móviles). Reorganizamos grids a 1 columna, cambiamos flex a columna, reducimos paddings.
+@media (max-width: 480px) { ... }   Para pantallas más pequeñas (móviles): más ajustes de tamaño y espaciado.
+@media (prefers-reduced-motion: reduce) { ... }  Si el usuario prefiere menos animación (accesibilidad), reducimos duración de transiciones y animaciones.
+@media (prefers-contrast: high) { ... }  Si el usuario pide más contraste, oscurecemos textos para mejorar legibilidad.
+
+--- Otras propiedades usadas ---
+
+list-style: none;       Quita los bullets o números de una lista <ul> o <ol>.
+text-decoration: none;  Quita el subrayado de los enlaces.
+cursor: pointer;        Muestra la mano al pasar sobre elementos clicables (botones, enlaces).
+object-fit: cover;      En imágenes dentro de un contenedor: cubre todo el espacio recortando si hace falta (mantiene proporción).
+object-position: center;  Centra la imagen dentro del recorte (junto a object-fit).
+resize: vertical;       Permite redimensionar un <textarea> solo en vertical.
+var(--nombre-variable)  Inserta el valor de la variable CSS --nombre-variable (ej. var(--color-primario), var(--transicion-media)).
+
+
+Resumen global del sistema de estilos
+-------------------------------------
+- Reset y tipografía: todas las hojas parten de un reset básico (`* { margin, padding, box-sizing }`) y fijan la familia `'Inter'` importada desde Google Fonts para asegurar consistencia. En base.css el reset usa `margin: 0`. Antes se usaba `margin: 5` (inválido); ahora actúa como un “espaciado base” que luego se corrige con márgenes explícitos en cada componente.
+- Grid principal: el `body` se comporta como un grid con tres áreas (`cabecera`, `contenido-principal`, `pie-pagina`). Cada página asigna esas áreas mediante `grid-area`, asegurando que el header y el footer ocupen siempre la parte superior e inferior de la ventana.
+- Flex + Grid combinados: grid define los macro-layouts (secciones, cards, listados) mientras que flexbox resuelve alineaciones puntuales (menus, botones, miniaturas, badges).
+- Variables CSS compartidas: cada hoja define en `:root` la paleta corporativa (`--color-primario`, `--color-secundario`, `--color-fondo`, etc.), sombras (`--sombra-suave`, `--sombra-media`, `--sombra-fuerte`) y transiciones (`--transicion-rapida`, `--transicion-media`). Cuando la página requiere colores adicionales (badges, estados de formularios), se agregan allí mismo (`--color-excelente`, `--color-exito`, etc.).
+- Accesibilidad y rendimiento: se contemplan estados `:focus` visibles, media queries para `prefers-reduced-motion` y `prefers-contrast: high`, así como tamaños responsivos (768px y 480px). Los íconos son emoji para simplificar la maqueta.
+
+1. Inicio (`index.html` + `css/inicio.css`)
+-------------------------------------------
+- Estructura base: el `body` está declarado como `display: grid` con tres filas (`cabecera`, `contenido-principal`, `pie-pagina`) definidas mediante `grid-template-areas`. Así cada sección del HTML usa `grid-area` para anclarse a la plantilla.
+- Cabecera: `header.cabecera` contiene `div.contenedor-cabecera` que usa flexbox para alinear logo y menú (`nav.navegacion-principal > ul.menu`).
+- Hero: `section.seccion-hero` usa flex en dos columnas (texto e imagen). El fondo aplica un gradiente con `var(--color-primario)` y azul complementario; el botón reutiliza `--color-secundario`.
+- Secciones con grid:
+  * `div.grid-caracteristicas`: `display: grid` con `repeat(auto-fit, minmax(250px, 1fr))` para distribuir hasta 4 `article.card-caracteristica`. El HTML lista cada card con icono, título y párrafo.
+  * `div.grid-productos`: mismo patrón pero con `minmax(300px, 1fr)` para `article.card-producto` (imagen + info). HTML incluye botones y precios.
+  * `div.grid-testimonios`: `repeat(auto-fit, minmax(400px, 1fr))` para dos `article.card-testimonio`.
+  * `div.contenedor-footer`: grid responsive para tres columnas de información en el `footer`.
+- Responsive: media queries ajustan plantillas (`grid-template-columns: 1fr`) en tablets/móviles, y cambian flex a columnas.
+- Variables CSS: el `:root` define paleta base (`--color-primario`, `--color-secundario`, `--color-fondo`, etc.), sombras (`--sombra-*`) y transiciones (`--transicion-*`). El CSS reutiliza estas variables en fondos, textos, botones y efectos hover para mantener consistencia cromática.
+- Elementos adicionales: el footer es un grid de tres columnas con `ul` y redes sociales organizadas por flex-column. Se especifican estilos de accesibilidad para enlaces y botones (`outline` naranja).
+
+2. Catálogo (`catalogo.html` + `css/catalogo.css`)
+--------------------------------------------------
+- El `body` repite el layout en grid con áreas para header/main/footer.
+- Sección filtros: `div.filtros-busqueda` usa flex wrap para agrupar `div.filtro-grupo` (labels + selects) y el botón con `gap`.
+- Grid principal:
+  * `div.grid-catalogo`: `display: grid` + `repeat(auto-fit, minmax(320px, 1fr))` para cada `article.card-producto-catalogo`. Dentro del HTML cada card tiene contenedor de imagen, badge, info y botones.
+  * `div.contenedor-info` en la sección “info adicional” usa `repeat(auto-fit, minmax(250px, 1fr))` para tres tarjetas (`.info-garantia`, `.info-envio`, `.info-calidad`).
+  * Footer vuelve a ser grid como en inicio.
+- HTML soporta paginación y badges (`span.badge-estado`). CSS define colores de estado (`--color-excelente`, etc.).
+- Variables CSS: además de la paleta base, este archivo define constantes específicas para badges (`--color-excelente`, `--color-muy-bueno`, `--color-bueno`), usadas en `span.badge-estado`. Las mismas variables de sombras y transiciones se aplican sobre cards, filtros y botones para dar coherencia visual.
+
+3. Detalle de producto (`producto.html` + `css/producto.css`)
+-------------------------------------------------------------
+- Layout global igual: `body` en grid, `cabecera` sticky, `footer` grid.
+- `section.seccion-producto` crea `div.contenedor-producto` con `display: grid` y dos columnas (galería e info/panel).
+- Dentro:
+  * Galería: `div.galeria-producto` usa flex para miniaturas y caja central.
+  * Información: secciones tipo cards.
+  * `div.grid-estado`: grid con `repeat(2, 1fr)` para mostrar cuatro `div.item-estado`; se convierte a una columna en tablet (`grid-template-columns: 1fr`).
+  * `div.panel-compra` es sticky (posición `sticky` y `top:120px`).
+- Secciones inferiores:
+  * `div.grid-relacionados`: `repeat(auto-fit, minmax(250px, 1fr))`.
+  * `div.grid-garantias`: mismo patrón para cuatro beneficios.
+- Media queries convierten la grilla principal a una sola columna y adaptan el panel.
+- Variables CSS: comparte la paleta y añade colores para badges (`--color-excelente`, `--color-muy-bueno`, `--color-bueno`). El panel sticky, botones y precios usan estas variables para diferenciar precios (`--color-secundario`), estados y fondos (`--color-fondo`).
+- Extras relevantes: el breadcrumb usa un fondo gris claro (`--color-gris-claro`). Listas (`.lista-especificaciones`, `.lista-accesorios`) eliminan bullets y usan bordes horizontales para resaltar datos técnicos.
+
+4. Contacto (`contacto.html` + `css/contacto.css`)
+--------------------------------------------------
+- Estructura general con `body` grid + header/footer.
+- `section.seccion-contacto`: `div.contenedor-contacto` genera dos columnas (`grid-template-columns: 2fr 1fr`). HTML ubica el formulario a la izquierda y la tarjeta de información a la derecha.
+- Formulario:
+  * `div.grupo-campos`: grid de dos columnas para parear inputs; en responsive pasa a 1 columna.
+  * `div.campo-formulario.checkbox` personaliza check con pseudo-elementos.
+- `section.seccion-horarios`: `div.grid-horarios` usa `repeat(auto-fit, minmax(200px, 1fr))` para tres tarjetas de horario. Debajo, `div.info-horarios` es un bloque centrado.
+- Footer usa grid.
+- Variables CSS: mantiene la paleta general y agrega colores de estado (`--color-exito`, `--color-error`, `--color-advertencia`) que se aplican a badges de horario y a mensajes de formulario. Dos niveles de sombra (`--sombra-suave`, `--sombra-media`) se reutilizan en las tarjetas y el formulario.
+- Detalles de UX: el checkbox está personalizado con pseudo-elementos, y el botón de WhatsApp usa un bloque con icono circular semitransparente para destacar la acción rápida.
+
+5. Nosotros (`nosotros.html` + `css/nosotros.css`)
+--------------------------------------------------
+- Layout global en grid (body) igual a páginas anteriores.
+- Secciones basadas en grillas:
+  * `div.grid-historia`: dos columnas (imagen + texto).
+  * `div.grid-valores`: `repeat(auto-fit, minmax(250px, 1fr))` para cuatro valores.
+  * `div.grid-equipo`: `repeat(auto-fit, minmax(300px, 1fr))` para tarjetas del equipo.
+  * `div.timeline-proceso`: grid de pasos tipo cards (auto-fit 250px).
+  * `div.grid-logros`: `repeat(auto-fit, minmax(200px, 1fr))`.
+  * `div.grid-compromiso`: dos columnas (texto + imagen).
+- Todas las secciones incluyen HTML con títulos (`.titulo-seccion`), párrafos y botones. Media queries degradan las grillas a una columna y ajustan alturas de imágenes para tablets/móviles.
+- Variables CSS: usa la misma paleta base para títulos, botones primarios/secundarios y fondos claros (`--color-gris-claro`). Las sombras se aplican en cards de valores, equipo y logros; las transiciones uniforman los efectos hover.
+
+6. Garantías (`garantias.html` + `css/garantias.css`)
+-----------------------------------------------------
+- Mismo layout base.
+- Secciones con grid:
+  * `div.grid-garantia-principal`: dos columnas (imagen + texto) para la garantía principal.
+  * `div.grid-cobertura`: `repeat(auto-fit, minmax(300px, 1fr))` para seis cards de cobertura.
+  * `div.timeline-proceso`: auto-fit a 250px (igual que nosotros) para explicar pasos.
+  * `div.grid-politicas`: `repeat(auto-fit, minmax(280px, 1fr))` para cuatro cards (devoluciones, cambios, privacidad, envíos).
+  * `div.grid-terminos`: `repeat(auto-fit, minmax(350px, 1fr))` para seis ítems numerados.
+  * `div.grid-contacto-garantias`: dos columnas (texto + formulario); adentro el formulario usa campos apilados.
+- HTML relaciona cada bloque con iconos e ítems de listas. Media queries linealizan todas las grillas en pantallas pequeñas.
+- Variables CSS: además de la paleta común, fija colores para estados (`--color-exito`, `--color-error`, `--color-advertencia`) que se usan en resaltados, listas y formularios. Las cards aprovechan las mismas variables de sombras y secciones resaltadas usan `--color-secundario` para bordes laterales.
+
+7. Carrito (`carrito.html` + `css/carrito.css`)
+-----------------------------------------------
+- Layout base en grid.
+- `section.seccion-carrito`: `div.contenedor-carrito` crea dos columnas (productos y sidebar). En responsive baja a una columna.
+- `div.productos-carrito`:
+  * Cada `article.item-carrito` usa `display: grid` con 5 columnas (`80px`, `1fr`, `auto` x3) creando una tabla visual (imagen, info, cantidad, precios, acciones). En tablets el grid cambia a 2 columnas y algunas filas ocupan `grid-column: 1 / -1`.
+- `div.resumen-compra` se hace sticky como en detalle de producto, y `div.formulario-checkout` replica el patrón de formularios anteriores (grid en `div.grupo-campos`).
+- `section.seccion-seguridad` usa `div.grid-seguridad` (`repeat(auto-fit, minmax(250px, 1fr))`) para cuatro tarjetas de confianza.
+- Footer vuelve a ser grid.
+- Variables CSS: reutiliza la misma paleta y define explícitamente `--color-exito` y `--color-error` para resaltar costos (envío gratis, botón eliminar). El resumen y formularios emplean `--color-secundario` para precios finales y botones, y las sombras/transiciones se mantienen uniformes.
+- Particularidades: los `article.item-carrito` funcionan como una tabla visual sin usar `<table>`, facilitando el responsive. Los inputs de cantidad están bloqueados (`readonly`) simulando un carrito estático, ideal para maquetas.
+
+Notas generales
+---------------
+- Todos los CSS comparten la misma filosofía: grid principal en `body`, componentes tipo cards organizados con `display: grid` y `auto-fit` para responsividad, combinado con flexbox en elementos lineales (menús, botones, badges).
+- Las media queries a 768px y 480px reorganizan las grillas a 1 columna, ajustan paddings y tamaños de fuentes para mantener la maqueta legible en tablets y móviles.
+- Las variables CSS se definen al comienzo de cada hoja gracias a `:root`: comparten la misma paleta y catálogo de sombras/transiciones, y cada página suma constantes propias cuando necesita estados (badges, advertencias, etc.). Esto permite cambiar el esquema visual editando un solo bloque y garantiza consistencia en contraste, accesibilidad (enfoques visibles) y animaciones (`prefers-reduced-motion`, `prefers-contrast: high`).
+- Recomendaciones para la exposición: mostrar primero el layout global (grid del `body`), luego resaltar cómo cada página adapta las grillas (`repeat(auto-fit)`) y finalmente mencionar las variables como “single source of truth” cromática. Si se necesitan cambios estéticos, basta con modificar los tokens del `:root` de cada hoja o consolidarlos en un archivo común.
+
