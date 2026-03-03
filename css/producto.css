@@ -1,6 +1,6 @@
-/* Cargar base.css antes. Estilos específicos de Producto. */
+/* Estilos de la página del detalle del producto (base.css va primero) */
 
-/* ===== SECCIÓN PRODUCTO PRINCIPAL ===== */
+/* La parte de arriba: foto grande y datos del celular */
 .seccion-producto {
     padding: 3rem 2rem;
     max-width: 1200px;
@@ -97,7 +97,7 @@
     line-height: 1.6;
 }
 
-/* ===== ESPECIFICACIONES ===== */
+/* La lista de datos técnicos (almacenamiento, pantalla, etc.) */
 .especificaciones {
     background: var(--color-blanco);
     padding: 1.5rem;
@@ -133,7 +133,7 @@
     font-weight: 600;
 }
 
-/* ===== ESTADO DEL DISPOSITIVO ===== */
+/* Las cuatro cajitas de estado (carcasa, batería, cámaras, audio) */
 .estado-dispositivo {
     background: var(--color-blanco);
     padding: 1.5rem;
@@ -181,7 +181,7 @@
     margin: 0;
 }
 
-/* ===== ACCESORIOS INCLUIDOS ===== */
+/* La lista de lo que viene con el equipo */
 .accesorios-incluidos {
     background: var(--color-blanco);
     padding: 1.5rem;
@@ -206,7 +206,7 @@
     color: var(--color-texto);
 }
 
-/* ===== PANEL DE COMPRA ===== */
+/* El cuadro de precio, botones de comprar y WhatsApp (queda fijo al hacer scroll) */
 .panel-compra {
     background: var(--color-blanco);
     padding: 2rem;
@@ -264,7 +264,7 @@
     font-size: 1.2rem;
 }
 
-/* ===== BOTONES DE COMPRA ===== */
+/* Comprar, favoritos y consultar */
 .botones-compra {
     display: flex;
     flex-direction: column;
@@ -311,7 +311,7 @@
     transform: translateY(-2px);
 }
 
-/* ===== CONTACTO RÁPIDO ===== */
+/* El botón de WhatsApp para consultas */
 .contacto-rapido {
     text-align: center;
     padding-top: 1.5rem;
@@ -345,7 +345,7 @@
     transform: translateY(-2px);
 }
 
-/* ===== SECCIÓN PRODUCTOS RELACIONADOS ===== */
+/* Los otros celulares que podrían gustarte */
 .seccion-relacionados {
     background-color: var(--color-gris-claro);
     padding: 3rem 2rem;
@@ -443,7 +443,7 @@
     transform: translateY(-2px);
 }
 
-/* ===== SECCIÓN GARANTÍAS ===== */
+/* Las cuatro tarjetas de garantía y políticas */
 .seccion-garantias {
     padding: 3rem 2rem;
 }
@@ -498,7 +498,7 @@
     line-height: 1.6;
 }
 
-/* ===== MEDIA QUERIES ===== */
+/* Ajustes para tablets y celulares */
 @media (max-width: 768px) {
     .breadcrumb {
         padding: 0.75rem 1rem;

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Configuración básica de la página -->
+    <!-- Lo que va en la cabecera (idioma, título, descripción) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iPhone 13 Pro - uPhone | Detalle del Producto</title>
     <meta name="description" content="iPhone 13 Pro usado en excelente estado. 128GB, Grafito, batería 94%, sin uso visible. Garantía de 6 meses incluida.">
     
-    <!-- Favicon -->
+    <!-- El iconito que sale en la pestaña del navegador -->
     <link rel="icon" type="image/png" href="./img/favicon.png">
     
-    <!-- Google Fonts para mejorar la tipografía -->
+    <!-- La letra que uso (Inter) la traigo de acá -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,17 +19,17 @@
     <link rel="stylesheet" href="./css/producto.css">
 </head>
 <body>
-    <!-- Header principal con logo y navegación -->
+    <!-- Arriba de todo: logo y menú -->
     <header class="cabecera">
         <div class="contenedor-cabecera">
-            <!-- Logo de la empresa -->
+            <!-- Mi logo -->
             <div class="logo">
                 <a href="index.html" class="logo-link">
                     <img src="./img/logo.png" alt="uPhone - Celulares Usados Premium" class="img-logo">
                 </a>
             </div>
             
-            <!-- Menú de navegación principal -->
+            <!-- Los links del menú -->
             <nav class="navegacion-principal">
                 <ul class="menu">
                     <li><a href="catalogo.html">Catálogo</a></li>
@@ -42,27 +42,27 @@
         </div>
     </header>
 
-    <!-- Contenido principal de la página -->
+    <!-- Todo lo del medio de la página -->
     <main class="contenido-principal">
-        <!-- Breadcrumb para navegación -->
+        <!-- La ruta Inicio > Catálogo > Producto -->
         <section class="breadcrumb">
             <div class="contenedor-breadcrumb">
-                <a href="index.html">Inicio</a> > 
-                <a href="catalogo.html">Catálogo</a> > 
+                <a href="index.html">Inicio</a> &gt; 
+                <a href="catalogo.html">Catálogo</a> &gt; 
                 <span>iPhone 13 Pro</span>
             </div>
         </section>
 
-        <!-- Sección principal del producto -->
+        <!-- Foto grande, datos y panel de compra -->
         <section class="seccion-producto">
             <div class="contenedor-producto">
-                <!-- Galería de imágenes del producto -->
+                <!-- La foto principal y las miniaturas -->
                 <div class="galeria-producto">
                     <div class="imagen-principal">
                         <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 13 Pro usado en estado excelente - Vista frontal" class="img-principal">
                     </div>
                     
-                    <!-- Miniaturas de imágenes adicionales -->
+                    <!-- Las fotos chiquitas para elegir vista -->
                     <div class="miniaturas">
                         <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 13 Pro - Vista lateral" class="miniatura activa">
                         <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 13 Pro - Vista trasera" class="miniatura">
@@ -71,15 +71,15 @@
                     </div>
                 </div>
 
-                <!-- Información detallada del producto -->
+                <!-- Especificaciones, estado, accesorios -->
                 <div class="info-producto-detalle">
-                    <!-- Badge de estado y título -->
+                    <!-- La etiqueta Excelente y el nombre del modelo -->
                     <div class="header-producto">
                         <span class="badge-estado excelente">Excelente</span>
                         <h1 class="titulo-producto">iPhone 13 Pro</h1>
                     </div>
 
-                    <!-- Descripción y características -->
+                    <!-- Descripción corta y lista de especificaciones -->
                     <div class="descripcion-producto">
                         <p class="descripcion-corta">iPhone 13 Pro usado en excelente estado, con accesorios originales incluidos.</p>
                         
@@ -96,7 +96,7 @@
                             </ul>
                         </div>
 
-                        <!-- Estado del dispositivo -->
+                        <!-- Las cuatro cajitas de estado (carcasa, batería, etc.) -->
                         <div class="estado-dispositivo">
                             <h3>Estado del Dispositivo</h3>
                             <div class="grid-estado">
@@ -131,7 +131,7 @@
                             </div>
                         </div>
 
-                        <!-- Accesorios incluidos -->
+                        <!-- Lista de lo que viene en la caja -->
                         <div class="accesorios-incluidos">
                             <h3>Accesorios Incluidos</h3>
                             <ul class="lista-accesorios">
@@ -144,7 +144,7 @@
                         </div>
                     </div>
 
-                    <!-- Panel de compra -->
+                    <!-- Precio, botones y WhatsApp (queda fijo al hacer scroll) -->
                     <div class="panel-compra">
                         <div class="precio-container">
                             <span class="precio-original">$850.000</span>
@@ -167,14 +167,14 @@
                             </div>
                         </div>
 
-                        <!-- Botones de acción -->
+                        <!-- Comprar, favoritos, consultar -->
                         <div class="botones-compra">
                             <button class="boton-comprar">Comprar Ahora</button>
                             <button class="boton-favorito-detalle">❤️ Agregar a Favoritos</button>
                             <button class="boton-consultar">💬 Consultar Disponibilidad</button>
                         </div>
 
-                        <!-- Información de contacto rápida -->
+                        <!-- El botón de WhatsApp -->
                         <div class="contacto-rapido">
                             <h4>¿Tenés dudas sobre este producto?</h4>
                             <p>Contactanos por WhatsApp para consultas inmediatas</p>
@@ -187,7 +187,7 @@
             </div>
         </section>
 
-        <!-- Sección de productos relacionados -->
+        <!-- Otros celulares que podrían gustarte -->
         <section class="seccion-relacionados">
             <div class="contenedor-relacionados">
                 <h2 class="titulo-relacionados">Productos Relacionados</h2>
@@ -235,7 +235,7 @@
             </div>
         </section>
 
-        <!-- Sección de garantías y políticas -->
+        <!-- Las cuatro tarjetas de garantía y políticas -->
         <section class="seccion-garantias">
             <div class="contenedor-garantias">
                 <h2 class="titulo-garantias">Garantías y Políticas</h2>
@@ -269,10 +269,10 @@
         </section>
     </main>
 
-    <!-- Footer con información adicional -->
+    <!-- El pie de página -->
     <footer class="pie-pagina">
         <div class="contenedor-footer">
-            <!-- Información de contacto -->
+            <!-- Teléfono, mail, dirección -->
             <div class="columna-footer">
                 <h4>Contacto</h4>
                 <p>📞 (376) 4724207</p>
@@ -288,7 +288,7 @@
                 </ul>
             </div>
             
-            <!-- Redes sociales -->
+            <!-- Facebook, Instagram, Twitter -->
             <div class="columna-footer">
                 <h4>Síguenos</h4>
                 <div class="redes-sociales">
@@ -299,10 +299,10 @@
             </div>
         </div>
         
-        <!-- Copyright -->
+        <!-- Derechos de autor -->
         <div class="copyright">
-            <p>&copy; 2025 uPhone - Todos los derechos reservados</p>
-            <p>&copy; 2025 <a href="#" class="red-social">WebExperts</a> - Todos los derechos reservados</p>
+            <p>&copy; 2025 <a href="https://www.webxpert.com.ar" class="red-social" target="_blank" rel="noopener">WebExperts</a> - Todos los derechos reservados</p>
+            <p>Desarrollado por Julio Pintos | <a href="https://www.webxpert.com.ar" target="_blank" rel="noopener">www.webxpert.com.ar</a></p>
         </div>
     </footer>
 </body>

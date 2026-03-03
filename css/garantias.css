@@ -1,4 +1,4 @@
-/* Cargar base.css antes. Estilos específicos de Garantías. */
+/* Estilos de la página Garantías (base.css va primero) */
 
 .contenedor-encabezado {
     max-width: 800px;
@@ -17,7 +17,7 @@
     font-weight: 300;
 }
 
-/* ===== SECCIÓN GARANTÍA PRINCIPAL ===== */
+/* La parte de arriba: imagen y texto de la garantía de 6 meses */
 .seccion-garantia-principal {
     padding: 4rem 2rem;
     max-width: 1200px;
@@ -25,7 +25,7 @@
 }
 
 .contenedor-garantia {
-    /* Contenedor para la garantía principal */
+    /* Acá va la garantía principal */
 }
 
 .grid-garantia-principal {
@@ -36,7 +36,7 @@
 }
 
 .imagen-garantia {
-    /* Contenedor para la imagen */
+    /* La imagen */
 }
 
 .img-garantia {
@@ -47,7 +47,7 @@
 }
 
 .texto-garantia {
-    /* Contenedor para el texto */
+    /* El texto */
 }
 
 .titulo-seccion {
@@ -97,7 +97,7 @@
     color: var(--color-primario);
 }
 
-/* ===== SECCIÓN COBERTURA ===== */
+/* Las seis tarjetas de qué cubre la garantía */
 .seccion-cobertura {
     background-color: var(--color-gris-claro);
     padding: 4rem 2rem;
@@ -174,7 +174,7 @@
     font-weight: bold;
 }
 
-/* ===== SECCIÓN PROCESO ===== */
+/* Los cuatro pasos para hacer efectiva la garantía */
 .seccion-proceso {
     padding: 4rem 2rem;
     max-width: 1200px;
@@ -182,7 +182,7 @@
 }
 
 .contenedor-proceso {
-    /* Contenedor para el proceso */
+    /* Los pasos del proceso */
 }
 
 .descripcion-proceso {
@@ -242,7 +242,7 @@
     line-height: 1.6;
 }
 
-/* ===== SECCIÓN POLÍTICAS ===== */
+/* Las cuatro políticas (devoluciones, cambios, privacidad, envíos) */
 .seccion-politicas {
     background-color: var(--color-gris-claro);
     padding: 4rem 2rem;
@@ -315,7 +315,7 @@
     font-weight: bold;
 }
 
-/* ===== SECCIÓN TÉRMINOS ===== */
+/* Los seis ítems de términos y condiciones */
 .seccion-terminos {
     padding: 4rem 2rem;
     max-width: 1200px;
@@ -323,7 +323,7 @@
 }
 
 .contenedor-terminos {
-    /* Contenedor para los términos */
+    /* Cada ítem de términos */
 }
 
 .grid-terminos {
@@ -358,7 +358,7 @@
     line-height: 1.6;
 }
 
-/* ===== SECCIÓN CONTACTO GARANTÍAS ===== */
+/* Texto de contacto y formulario de reclamo */
 .seccion-contacto-garantias {
     background-color: var(--color-gris-claro);
     padding: 4rem 2rem;
@@ -377,7 +377,7 @@
 }
 
 .texto-contacto {
-    /* Contenedor para el texto */
+    /* El texto */
 }
 
 .descripcion-contacto {
@@ -388,7 +388,7 @@
 }
 
 .canales-contacto {
-    /* Contenedor para los canales */
+    /* WhatsApp, teléfono, email */
 }
 
 .canal-contacto {
@@ -438,7 +438,7 @@
     font-size: 0.9rem;
 }
 
-/* ===== FORMULARIO GARANTÍA ===== */
+/* El formulario para enviar un reclamo de garantía */
 .formulario-garantia {
     background: var(--color-blanco);
     padding: 2rem;
@@ -454,7 +454,7 @@
 }
 
 .formulario-reclamo {
-    /* Contenedor del formulario */
+    /* Los campos del formulario */
 }
 
 .campo-formulario {
@@ -515,7 +515,7 @@
     box-shadow: var(--sombra-media);
 }
 
-/* ===== MEDIA QUERIES ===== */
+/* Ajustes para tablets y celulares */
 @media (max-width: 768px) {
     .titulo-garantias {
         font-size: 2.5rem;

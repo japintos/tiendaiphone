@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Configuración básica de la página -->
+    <!-- Lo que va en la cabecera (idioma, título, descripción) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>uPhone - Celulares Usados de Calidad</title>
     <meta name="description" content="uPhone - La mejor tienda de celulares usados. Encuentra iPhones de segunda mano con garantía y a precios increíbles.">
     
-    <!-- Favicon -->
+    <!-- El iconito que sale en la pestaña del navegador -->
     <link rel="icon" type="image/png" href="./img/favicon.png">
     
-    <!-- Google Fonts para mejorar la tipografía -->
+    <!-- La letra que uso (Inter) la traigo de acá -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Estilos base (reset, cabecera, pie, variables) + específicos de la página -->
+    <!-- Primero los estilos que comparten todas las páginas, después los de esta -->
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/inicio.css">
 </head>
 <body>
-    <!-- Header principal con logo y navegación -->
+    <!-- Arriba de todo: logo y menú -->
     <header class="cabecera">
         <div class="contenedor-cabecera">
-            <!-- Logo de la empresa -->
+            <!-- Mi logo -->
             <div class="logo">
                 <a href="index.html" class="logo-link">
                     <img src="./img/logo.png" alt="uPhone - Celulares Usados Premium" class="img-logo">
                 </a>
             </div>
             
-            <!-- Menú de navegación principal -->
+            <!-- Los links del menú -->
             <nav class="navegacion-principal">
                 <ul class="menu">
                     <li><a href="catalogo.html">Catálogo</a></li>
@@ -43,49 +43,49 @@
         </div>
     </header>
 
-    <!-- Contenido principal de la página -->
+    <!-- Todo lo del medio de la página -->
     <main class="contenido-principal">
-        <!-- Sección hero con mensaje principal -->
+        <!-- La portada grande con el mensaje de bienvenida -->
         <section class="seccion-hero">
             <div class="contenido-hero">
                 <h2 class="titulo-principal">¡Encuentra tu iPhone ideal!</h2>
                 <p class="subtitulo-hero">Celulares usados en perfecto estado, con garantía y a precios increíbles</p>
                 <a href="catalogo.html" class="boton-principal">Ver Catálogo</a>
             </div>
-            <!-- Imagen representativa del hero -->
+            <!-- La foto del celular en la portada -->
             <div class="imagen-hero">
                 <img src="./img/hero-iphone.png" alt="iPhone usado en perfecto estado sobre fondo elegante" class="img-hero">
             </div>
         </section>
 
-        <!-- Sección de características principales -->
+        <!-- Las cuatro razones para elegirnos (garantía, calidad, etc.) -->
         <section class="seccion-caracteristicas">
             <div class="contenedor-caracteristicas">
                 <h3 class="titulo-seccion">¿Por qué elegir uPhone?</h3>
                 
                 <div class="grid-caracteristicas">
-                    <!-- Card de garantía -->
+                    <!-- Tarjeta de garantía -->
                     <article class="card-caracteristica">
                         <div class="icono-caracteristica">🛡️</div>
                         <h4>Garantía Total</h4>
                         <p>Todos nuestros celulares vienen con garantía de 6 meses para tu tranquilidad.</p>
                     </article>
                     
-                    <!-- Card de calidad -->
+                    <!-- Tarjeta de calidad -->
                     <article class="card-caracteristica">
                         <div class="icono-caracteristica">⭐</div>
                         <h4>Calidad Verificada</h4>
                         <p>Cada dispositivo pasa por rigurosas pruebas de calidad antes de salir a la venta.</p>
                     </article>
                     
-                    <!-- Card de precios -->
+                    <!-- Tarjeta de precios -->
                     <article class="card-caracteristica">
                         <div class="icono-caracteristica">💰</div>
                         <h4>Precios Justos</h4>
                         <p>Precios competitivos sin comprometer la calidad del producto.</p>
                     </article>
                     
-                    <!-- Card de entrega -->
+                    <!-- Tarjeta de envío -->
                     <article class="card-caracteristica">
                         <div class="icono-caracteristica">🚚</div>
                         <h4>Envío Gratis</h4>
@@ -95,13 +95,13 @@
             </div>
         </section>
 
-        <!-- Sección de productos destacados -->
+        <!-- Los productos que muestro en la portada -->
         <section class="seccion-destacados">
             <div class="contenedor-destacados">
                 <h3 class="titulo-seccion">Productos Destacados</h3>
                 
                 <div class="grid-productos">
-                    <!-- Producto destacado 1 -->
+                    <!-- Primer producto -->
                     <article class="card-producto">
                         <div class="imagen-producto">
                             <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 13 Pro usado en excelente estado" class="img-producto">
@@ -114,7 +114,7 @@
                         </div>
                     </article>
                     
-                    <!-- Producto destacado 2 -->
+                    <!-- Segundo producto -->
                     <article class="card-producto">
                         <div class="imagen-producto">
                             <img src="./img/iphone-12.jpeg" alt="iPhone 12 usado en muy buen estado" class="img-producto">
@@ -127,7 +127,7 @@
                         </div>
                     </article>
                     
-                    <!-- Producto destacado 3 -->
+                    <!-- Tercer producto -->
                     <article class="card-producto">
                         <div class="imagen-producto">
                             <img src="./img/iphone-12.jpeg" alt="iPhone 11 usado en buen estado" class="img-producto">
@@ -141,20 +141,20 @@
                     </article>
                 </div>
                 
-                <!-- Botón para ver más productos -->
+                <!-- Link para ir al catálogo completo -->
                 <div class="contenedor-boton-ver-mas">
                     <a href="catalogo.html" class="boton-secundario">Ver Todos los Productos</a>
                 </div>
             </div>
         </section>
 
-        <!-- Sección de testimonios -->
+        <!-- Lo que dicen los clientes -->
         <section class="seccion-testimonios">
             <div class="contenedor-testimonios">
                 <h3 class="titulo-seccion">Lo que dicen nuestros clientes</h3>
                 
                 <div class="grid-testimonios">
-                    <!-- Testimonio 1 -->
+                    <!-- Primer testimonio -->
                     <article class="card-testimonio">
                         <div class="contenido-testimonio">
                             <p>"Excelente servicio y calidad. Mi iPhone 13 Pro llegó en perfecto estado y funcionando al 100%. ¡Altamente recomendado!"</p>
@@ -165,7 +165,7 @@
                         </div>
                     </article>
                     
-                    <!-- Testimonio 2 -->
+                    <!-- Segundo testimonio -->
                     <article class="card-testimonio">
                         <div class="contenido-testimonio">
                             <p>"La mejor tienda de celulares usados. Precios justos, garantía real y atención personalizada. Volveré a comprar."</p>
@@ -180,10 +180,10 @@
         </section>
     </main>
 
-    <!-- Footer con información adicional -->
+    <!-- El pie de página -->
     <footer class="pie-pagina">
         <div class="contenedor-footer">
-            <!-- Información de contacto -->
+            <!-- Teléfono, mail, dirección -->
             <div class="columna-footer">
                 <h4>Contacto</h4>
                 <p>📞 (376) 4724207</p>
@@ -191,7 +191,7 @@
                 <p>📍 Córdoba 3456, Posadas Misiones C.P. 3300</p>
             </div>
             
-            <!-- Enlaces rápidos -->
+            <!-- Links rápidos -->
             <div class="columna-footer">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
@@ -200,7 +200,7 @@
                 </ul>
             </div>
             
-            <!-- Redes sociales -->
+            <!-- Facebook, Instagram, Twitter -->
             <div class="columna-footer">
                 <h4>Síguenos</h4>
                 <div class="redes-sociales">
@@ -211,10 +211,10 @@
             </div>
         </div>
         
-        <!-- Copyright -->
+        <!-- Derechos de autor -->
         <div class="copyright">
-            <p>&copy; 2025 uPhone - Todos los derechos reservados</p>
-            <p>&copy; 2025 <a href="#" class="red-social">WebExperts</a> - Todos los derechos reservados</p>
+            <p>&copy; 2025 <a href="https://www.webxpert.com.ar" class="red-social" target="_blank" rel="noopener">WebExperts</a> - Todos los derechos reservados</p>
+            <p>Desarrollado por Julio Pintos | <a href="https://www.webxpert.com.ar" target="_blank" rel="noopener">www.webxpert.com.ar</a></p>
         </div>
     </footer>
 </body>

@@ -1,4 +1,4 @@
-/* Cargar base.css antes. Estilos específicos de Contacto. */
+/* Estilos de la página de contacto (base.css va primero) */
 
 .contenedor-encabezado {
     max-width: 800px;
@@ -17,7 +17,7 @@
     font-weight: 300;
 }
 
-/* ===== SECCIÓN CONTACTO PRINCIPAL ===== */
+/* Formulario a la izquierda y datos de contacto a la derecha */
 .seccion-contacto {
     padding: 4rem 2rem;
     max-width: 1200px;
@@ -31,7 +31,7 @@
     align-items: start;
 }
 
-/* ===== FORMULARIO DE CONTACTO ===== */
+/* La caja del formulario */
 .formulario-contacto {
     background: var(--color-blanco);
     padding: 2rem;
@@ -52,9 +52,8 @@
     line-height: 1.6;
 }
 
-/* ===== ESTILOS DEL FORMULARIO ===== */
+/* Los campos del formulario (inputs, labels, etc.) */
 .formulario {
-    /* Contenedor del formulario */
 }
 
 .grupo-campos {
@@ -103,7 +102,7 @@
     min-height: 120px;
 }
 
-/* ===== CHECKBOX PERSONALIZADO ===== */
+/* El cuadradito de aceptar términos que personalicé */
 .campo-formulario.checkbox {
     margin-bottom: 2rem;
 }
@@ -159,7 +158,7 @@
     text-decoration: underline;
 }
 
-/* ===== BOTÓN DE ENVÍO ===== */
+/* El botón Enviar mensaje */
 .boton-enviar {
     background-color: var(--color-secundario);
     color: var(--color-blanco);
@@ -185,7 +184,7 @@
     transform: translateY(0);
 }
 
-/* ===== INFORMACIÓN DE CONTACTO ===== */
+/* La columna con teléfono, email, dirección */
 .info-contacto {
     background: var(--color-blanco);
     padding: 2rem;
@@ -207,7 +206,7 @@
     line-height: 1.6;
 }
 
-/* ===== DATOS DE CONTACTO ===== */
+/* Cada ítem de contacto (icono + texto) */
 .datos-contacto {
     margin-bottom: 2rem;
 }
@@ -257,7 +256,7 @@
     font-size: 0.85rem;
 }
 
-/* ===== BOTÓN WHATSAPP ===== */
+/* El botón grande de chat por WhatsApp */
 .whatsapp-rapido {
     margin-top: 2rem;
 }
@@ -303,7 +302,7 @@
     opacity: 0.9;
 }
 
-/* ===== SECCIÓN HORARIOS ===== */
+/* Las tarjetas de horario (lunes a viernes, sábados, domingos) */
 .seccion-horarios {
     background-color: var(--color-gris-claro);
     padding: 3rem 2rem;
@@ -390,7 +389,7 @@
 }
 
 
-/* ===== MEDIA QUERIES ===== */
+/* Ajustes para tablets y celulares */
 @media (max-width: 768px) {
     .titulo-contacto {
         font-size: 2.5rem;

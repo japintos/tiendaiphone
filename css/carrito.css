@@ -1,4 +1,4 @@
-/* Cargar base.css antes. Estilos específicos de Carrito. */
+/* Estilos de la página del carrito (base.css va primero) */
 
 .contenedor-encabezado {
     max-width: 800px;
@@ -17,7 +17,7 @@
     font-weight: 300;
 }
 
-/* ===== SECCIÓN CARRITO PRINCIPAL ===== */
+/* La parte de los productos y el resumen al lado */
 .seccion-carrito {
     padding: 3rem 2rem;
     max-width: 1200px;
@@ -31,7 +31,7 @@
     align-items: start;
 }
 
-/* ===== PRODUCTOS EN CARRITO ===== */
+/* Cada producto que agregaste al carrito */
 .productos-carrito {
     background: var(--color-blanco);
     padding: 2rem;
@@ -60,7 +60,7 @@
 }
 
 .imagen-producto-carrito {
-    /* Contenedor para la imagen */
+    /* La foto del producto */
 }
 
 .img-producto-carrito {
@@ -129,7 +129,7 @@
 }
 
 .acciones-producto {
-    /* Contenedor para botones de acción */
+    /* Seguir comprando y vaciar carrito */
 }
 
 .boton-eliminar {
@@ -148,7 +148,7 @@
     transform: scale(1.1);
 }
 
-/* ===== ACCIONES DEL CARRITO ===== */
+/* Los botones de eliminar, seguir comprando, vaciar */
 .acciones-carrito {
     display: flex;
     justify-content: space-between;
@@ -190,9 +190,9 @@
     transform: translateY(-2px);
 }
 
-/* ===== RESUMEN Y CHECKOUT ===== */
+/* La columna de la derecha: total y formulario */
 .resumen-checkout {
-    /* Contenedor para resumen y formulario */
+    /* Resumen arriba, formulario abajo */
 }
 
 .resumen-compra {
@@ -253,7 +253,7 @@
 }
 
 .info-adicional-carrito {
-    /* Información adicional del resumen */
+    /* Los íconos de garantía, envío, etc. */
 }
 
 .info-item {
@@ -269,7 +269,7 @@
     font-size: 1.2rem;
 }
 
-/* ===== FORMULARIO CHECKOUT ===== */
+/* El formulario para completar la compra */
 .formulario-checkout {
     background: var(--color-blanco);
     padding: 2rem;
@@ -290,9 +290,8 @@
     font-size: 0.95rem;
 }
 
-/* ===== ESTILOS DEL FORMULARIO ===== */
+/* Los campos del formulario (nombre, dirección, etc.) */
 .formulario-compra {
-    /* Contenedor del formulario */
 }
 
 .grupo-campos {
@@ -341,7 +340,7 @@
     min-height: 80px;
 }
 
-/* ===== CHECKBOX PERSONALIZADO ===== */
+/* El cuadradito de aceptar términos que personalicé */
 .campo-formulario.checkbox {
     margin-bottom: 2rem;
 }
@@ -397,7 +396,7 @@
     text-decoration: underline;
 }
 
-/* ===== BOTÓN FINALIZAR COMPRA ===== */
+/* El botón de finalizar compra */
 .boton-finalizar-compra {
     background-color: var(--color-secundario);
     color: var(--color-blanco);
@@ -419,7 +418,7 @@
     box-shadow: var(--sombra-media);
 }
 
-/* ===== CONTACTO COMPRA ===== */
+/* El botón de WhatsApp por si tenés dudas */
 .contacto-compra {
     text-align: center;
     padding-top: 2rem;
@@ -455,7 +454,7 @@
     transform: translateY(-2px);
 }
 
-/* ===== SECCIÓN SEGURIDAD ===== */
+/* Las cuatro tarjetas de "tu compra es segura" */
 .seccion-seguridad {
     background-color: var(--color-gris-claro);
     padding: 3rem 2rem;
@@ -517,7 +516,7 @@
     line-height: 1.6;
 }
 
-/* ===== MEDIA QUERIES ===== */
+/* Ajustes para tablets y celulares */
 @media (max-width: 768px) {
     .titulo-carrito {
         font-size: 2.5rem;

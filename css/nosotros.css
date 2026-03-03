@@ -1,4 +1,4 @@
-/* Cargar base.css antes. Estilos específicos de Nosotros. */
+/* Estilos de la página Nosotros (base.css va primero) */
 
 .contenedor-encabezado {
     max-width: 800px;
@@ -17,7 +17,7 @@
     font-weight: 300;
 }
 
-/* ===== SECCIÓN HISTORIA ===== */
+/* Historia de uPhone: imagen y texto */
 .seccion-historia {
     padding: 4rem 2rem;
     max-width: 1200px;
@@ -25,7 +25,7 @@
 }
 
 .contenedor-historia {
-    /* Contenedor para la historia */
+    /* Acá va la historia */
 }
 
 .grid-historia {
@@ -36,7 +36,7 @@
 }
 
 .imagen-historia {
-    /* Contenedor para la imagen */
+    /* La imagen */
 }
 
 .img-historia {
@@ -49,7 +49,7 @@
 }
 
 .texto-historia {
-    /* Contenedor para el texto */
+    /* El texto */
 }
 
 .titulo-seccion {
@@ -78,7 +78,7 @@
     line-height: 1.7;
 }
 
-/* ===== SECCIÓN VALORES ===== */
+/* Las cuatro tarjetas de valores (transparencia, calidad, etc.) */
 .seccion-valores {
     background-color: var(--color-gris-claro);
     padding: 4rem 2rem;
@@ -136,7 +136,7 @@
     line-height: 1.6;
 }
 
-/* ===== SECCIÓN EQUIPO ===== */
+/* Las tarjetas del equipo (fundador, técnica, atención) */
 .seccion-equipo {
     padding: 4rem 2rem;
     max-width: 1200px;
@@ -144,7 +144,7 @@
 }
 
 .contenedor-equipo {
-    /* Contenedor para el equipo */
+    /* Las tarjetas de las personas */
 }
 
 .descripcion-equipo {
@@ -221,7 +221,7 @@
     font-size: 0.95rem;
 }
 
-/* ===== SECCIÓN PROCESO ===== */
+/* Los pasos del proceso de calidad (1, 2, 3, 4) */
 .seccion-proceso {
     background-color: var(--color-gris-claro);
     padding: 4rem 2rem;
@@ -289,7 +289,7 @@
     line-height: 1.6;
 }
 
-/* ===== SECCIÓN LOGROS ===== */
+/* Los números que mostramos (celulares vendidos, satisfacción, etc.) */
 .seccion-logros {
     padding: 4rem 2rem;
     max-width: 1200px;
@@ -297,7 +297,7 @@
 }
 
 .contenedor-logros {
-    /* Contenedor para los logros */
+    /* Las cajitas de números */
 }
 
 .descripcion-logros {
@@ -350,7 +350,7 @@
     font-size: 0.9rem;
 }
 
-/* ===== SECCIÓN COMPROMISO ===== */
+/* Texto de compromiso y la imagen de abajo */
 .seccion-compromiso {
     background-color: var(--color-gris-claro);
     padding: 4rem 2rem;
@@ -369,7 +369,7 @@
 }
 
 .texto-compromiso {
-    /* Contenedor para el texto */
+    /* El texto */
 }
 
 .parrafo-compromiso {
@@ -422,7 +422,7 @@
 }
 
 .imagen-compromiso {
-    /* Contenedor para la imagen */
+    /* La imagen */
 }
 
 .img-compromiso {
@@ -434,9 +434,9 @@
     box-shadow: var(--sombra-media);
 }
 
-/* ===== MEDIA QUERIES ===== */
+/* Ajustes para tablets y celulares */
 @media (max-width: 768px) {
-    /* Ajustes de imágenes para tablets */
+    /* Las fotos se achican un poco en tablet */
     .img-historia {
         height: 250px;
     }
@@ -491,7 +491,7 @@
         padding: 2rem 1rem;
     }
     
-    /* Ajustes de imágenes para móviles */
+    /* En celular las imágenes van más chicas */
     .img-historia {
         height: 200px;
     }

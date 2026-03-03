@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Configuración básica de la página -->
+    <!-- Lo que va en la cabecera (idioma, título, descripción) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo - uPhone | Celulares Usados</title>
     <meta name="description" content="Explora nuestro catálogo completo de iPhones usados. Encuentra el modelo perfecto para ti con garantía y a precios increíbles.">
     
-    <!-- Favicon -->
+    <!-- El iconito que sale en la pestaña del navegador -->
     <link rel="icon" type="image/png" href="./img/favicon.png">
     
-    <!-- Google Fonts para mejorar la tipografía -->
+    <!-- La letra que uso (Inter) la traigo de acá -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,17 +19,17 @@
     <link rel="stylesheet" href="./css/catalogo.css">
 </head>
 <body>
-    <!-- Header principal con logo y navegación -->
+    <!-- Arriba de todo: logo y menú -->
     <header class="cabecera">
         <div class="contenedor-cabecera">
-            <!-- Logo de la empresa -->
+            <!-- Mi logo -->
             <div class="logo">
                 <a href="index.html" class="logo-link">
                     <img src="./img/logo.png" alt="uPhone - Celulares Usados Premium" class="img-logo">
                 </a>
             </div>
             
-            <!-- Menú de navegación principal -->
+            <!-- Los links del menú -->
             <nav class="navegacion-principal">
                 <ul class="menu">
                     <li><a href="catalogo.html" class="activo">Catálogo</a></li>
@@ -42,15 +42,15 @@
         </div>
     </header>
 
-    <!-- Contenido principal de la página -->
+    <!-- Todo lo del medio de la página -->
     <main class="contenido-principal">
-        <!-- Sección de encabezado del catálogo -->
+        <!-- El título y los filtros de arriba -->
         <section class="seccion-encabezado">
             <div class="contenedor-encabezado">
                 <h2 class="titulo-catalogo">Catálogo de Celulares</h2>
                 <p class="subtitulo-catalogo">Descubre nuestra selección completa de iPhones usados en excelente estado</p>
                 
-                <!-- Filtros de búsqueda -->
+                <!-- Filtros por modelo, precio y estado -->
                 <div class="filtros-busqueda">
                     <div class="filtro-grupo">
                         <label for="filtro-modelo">Modelo:</label>
@@ -90,10 +90,10 @@
             </div>
         </section>
 
-        <!-- Sección del catálogo de productos -->
+        <!-- Donde se listan todos los productos -->
         <section class="seccion-catalogo">
             <div class="contenedor-catalogo">
-                <!-- Grid de productos del catálogo -->
+                <!-- Las tarjetas de productos se acomodan solas en filas -->
                 <div class="grid-catalogo">
                     <!-- iPhone 15 Pro Max -->
                     <article class="card-producto-catalogo">
@@ -312,7 +312,7 @@
                     </article>
                 </div>
 
-                <!-- Paginación -->
+                <!-- Botones Anterior y Siguiente -->
                 <div class="paginacion">
                     <button class="boton-pagina anterior" disabled>← Anterior</button>
                     <span class="pagina-actual">Página 1 de 2</span>
@@ -321,7 +321,7 @@
             </div>
         </section>
 
-        <!-- Sección de información adicional -->
+        <!-- Las tres cajitas de abajo (garantía, envío, calidad) -->
         <section class="seccion-info-adicional">
             <div class="contenedor-info">
                 <div class="info-garantia">
@@ -340,10 +340,10 @@
         </section>
     </main>
 
-    <!-- Footer con información adicional -->
+    <!-- El pie de página -->
     <footer class="pie-pagina">
         <div class="contenedor-footer">
-            <!-- Información de contacto -->
+            <!-- Teléfono, mail, dirección -->
             <div class="columna-footer">
                 <h4>Contacto</h4>
                 <p>📞 (376) 4724207</p>
@@ -359,7 +359,7 @@
                 </ul>
             </div>
             
-            <!-- Redes sociales -->
+            <!-- Facebook, Instagram, Twitter -->
             <div class="columna-footer">
                 <h4>Síguenos</h4>
                 <div class="redes-sociales">
@@ -370,10 +370,10 @@
             </div>
         </div>
         
-        <!-- Copyright -->
+        <!-- Derechos de autor -->
         <div class="copyright">
-            <p>&copy; 2025 uPhone - Todos los derechos reservados</p>
-            <p>&copy; 2025 <a href="#" class="red-social">WebExperts</a> - Todos los derechos reservados</p>
+            <p>&copy; 2025 <a href="https://www.webxpert.com.ar" class="red-social" target="_blank" rel="noopener">WebExperts</a> - Todos los derechos reservados</p>
+            <p>Desarrollado por Julio Pintos | <a href="https://www.webxpert.com.ar" target="_blank" rel="noopener">www.webxpert.com.ar</a></p>
         </div>
     </footer>
 </body>

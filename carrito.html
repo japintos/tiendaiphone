@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Configuración básica de la página -->
+    <!-- Lo que va en la cabecera (idioma, título, descripción) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras - uPhone | Celulares Usados</title>
     <meta name="description" content="Finaliza tu compra de celulares usados en uPhone. Carrito con productos seleccionados, envío gratis y garantía incluida.">
     
-    <!-- Favicon -->
+    <!-- El iconito que sale en la pestaña del navegador -->
     <link rel="icon" type="image/png" href="./img/favicon.png">
     
-    <!-- Google Fonts para mejorar la tipografía -->
+    <!-- La letra que uso (Inter) la traigo de acá -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,17 +19,17 @@
     <link rel="stylesheet" href="./css/carrito.css">
 </head>
 <body>
-    <!-- Header principal con logo y navegación -->
+    <!-- Arriba de todo: logo y menú -->
     <header class="cabecera">
         <div class="contenedor-cabecera">
-            <!-- Logo de la empresa -->
+            <!-- Mi logo -->
             <div class="logo">
                 <a href="index.html" class="logo-link">
                     <img src="./img/logo.png" alt="uPhone - Celulares Usados Premium" class="img-logo">
                 </a>
             </div>
             
-            <!-- Menú de navegación principal -->
+            <!-- Los links del menú -->
             <nav class="navegacion-principal">
                 <ul class="menu">
                     <li><a href="catalogo.html">Catálogo</a></li>
@@ -42,18 +42,18 @@
         </div>
     </header>
 
-    <!-- Contenido principal de la página -->
+    <!-- Todo lo del medio de la página -->
     <main class="contenido-principal">
-        <!-- Breadcrumb para navegación -->
+        <!-- La ruta Inicio > Carrito arriba del contenido -->
         <section class="breadcrumb">
             <div class="contenedor-breadcrumb">
-                <a href="index.html">Inicio</a> > 
-                <a href="catalogo.html">Catálogo</a> > 
+                <a href="index.html">Inicio</a> &gt; 
+                <a href="catalogo.html">Catálogo</a> &gt; 
                 <span>Carrito de Compras</span>
             </div>
         </section>
 
-        <!-- Sección de encabezado del carrito -->
+        <!-- El título "Tu carrito" -->
         <section class="seccion-encabezado">
             <div class="contenedor-encabezado">
                 <h2 class="titulo-carrito">🛒 Tu Carrito de Compras</h2>
@@ -61,14 +61,14 @@
             </div>
         </section>
 
-        <!-- Sección principal del carrito -->
+        <!-- La parte donde van los productos y el resumen -->
         <section class="seccion-carrito">
             <div class="contenedor-carrito">
-                <!-- Productos en el carrito -->
+                <!-- Acá listo los productos que el usuario agregó -->
                 <div class="productos-carrito">
                     <h3 class="titulo-productos">Productos Seleccionados</h3>
                     
-                    <!-- Producto 1 -->
+                    <!-- Primer producto del carrito -->
                     <article class="item-carrito">
                         <div class="imagen-producto-carrito">
                             <img src="./img/iphone-15-pro-max.jpeg" alt="iPhone 13 Pro usado en estado excelente" class="img-producto-carrito">
@@ -91,7 +91,7 @@
                         </div>
                     </article>
 
-                    <!-- Producto 2 -->
+                    <!-- Segundo producto del carrito -->
                     <article class="item-carrito">
                         <div class="imagen-producto-carrito">
                             <img src="./img/iphone-12.jpeg" alt="iPhone 12 usado en estado bueno" class="img-producto-carrito">
@@ -114,16 +114,16 @@
                         </div>
                     </article>
 
-                    <!-- Botones de acción del carrito -->
+                    <!-- Botones para vaciar o seguir comprando -->
                     <div class="acciones-carrito">
                         <a href="catalogo.html" class="boton-seguir-comprando">← Seguir Comprando</a>
                         <button class="boton-vaciar-carrito">Vaciar Carrito</button>
                     </div>
                 </div>
 
-                <!-- Resumen y checkout -->
+                <!-- Resumen de totales y formulario para pagar -->
                 <div class="resumen-checkout">
-                    <!-- Resumen de compra -->
+                    <!-- Subtotal, envío y total -->
                     <div class="resumen-compra">
                         <h3 class="titulo-resumen">Resumen de Compra</h3>
                         
@@ -151,7 +151,7 @@
                             </div>
                         </div>
 
-                        <!-- Información adicional -->
+                        <!-- Texto de envío gratis y devoluciones -->
                         <div class="info-adicional-carrito">
                             <div class="info-item">
                                 <span class="icono">🛡️</span>
@@ -172,13 +172,13 @@
                         </div>
                     </div>
 
-                    <!-- Formulario de checkout -->
+                    <!-- Formulario para completar la compra -->
                     <div class="formulario-checkout">
                         <h3 class="titulo-checkout">Finalizar Compra</h3>
                         <p class="descripcion-checkout">Completá tus datos para procesar el pedido</p>
                         
                         <form class="formulario-compra" action="#" method="POST">
-                            <!-- Datos personales -->
+                            <!-- Nombre, mail, teléfono -->
                             <div class="grupo-campos">
                                 <div class="campo-formulario">
                                     <label for="nombre">Nombre Completo *</label>
@@ -203,7 +203,7 @@
                                 </div>
                             </div>
 
-                            <!-- Dirección de envío -->
+                            <!-- Dónde enviar el pedido -->
                             <div class="campo-formulario">
                                 <label for="direccion">Dirección de Envío *</label>
                                 <input type="text" id="direccion" name="direccion" placeholder="Calle, número, barrio" required>
@@ -221,7 +221,7 @@
                                 </div>
                             </div>
 
-                            <!-- Método de pago -->
+                            <!-- Cómo va a pagar (transferencia, efectivo, etc.) -->
                             <div class="campo-formulario">
                                 <label for="metodo-pago">Método de Pago *</label>
                                 <select id="metodo-pago" name="metodo-pago" required>
@@ -233,13 +233,13 @@
                                 </select>
                             </div>
 
-                            <!-- Observaciones -->
+                            <!-- Un recuadro por si quiere dejar alguna nota -->
                             <div class="campo-formulario">
                                 <label for="observaciones">Observaciones</label>
                                 <textarea id="observaciones" name="observaciones" rows="3" placeholder="Alguna instrucción especial para la entrega..."></textarea>
                             </div>
 
-                            <!-- Checkbox de términos -->
+                            <!-- La casilla de aceptar términos -->
                             <div class="campo-formulario checkbox">
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="terminos" required>
@@ -248,13 +248,13 @@
                                 </label>
                             </div>
 
-                            <!-- Botón de finalizar compra -->
+                            <!-- El botón para confirmar el pedido -->
                             <div class="campo-formulario">
                                 <button type="submit" class="boton-finalizar-compra">Finalizar Compra</button>
                             </div>
                         </form>
 
-                        <!-- Información de contacto para dudas -->
+                        <!-- Texto por si tiene dudas, con teléfono y WhatsApp -->
                         <div class="contacto-compra">
                             <h4>¿Tenés dudas sobre tu compra?</h4>
                             <p>Contactanos por WhatsApp para asistencia inmediata</p>
@@ -267,7 +267,7 @@
             </div>
         </section>
 
-        <!-- Sección de información de seguridad -->
+        <!-- Los íconos de envío, pago seguro y garantía -->
         <section class="seccion-seguridad">
             <div class="contenedor-seguridad">
                 <h3 class="titulo-seguridad">Tu Compra es 100% Segura</h3>
@@ -305,7 +305,7 @@
     <!-- Footer con información adicional -->
     <footer class="pie-pagina">
         <div class="contenedor-footer">
-            <!-- Información de contacto -->
+            <!-- Teléfono, mail, dirección -->
             <div class="columna-footer">
                 <h4>Contacto</h4>
                 <p>📞 (376) 4724207</p>
@@ -322,7 +322,7 @@
                 </ul>
             </div>
             
-            <!-- Redes sociales -->
+            <!-- Facebook, Instagram, Twitter -->
             <div class="columna-footer">
                 <h4>Síguenos</h4>
                 <div class="redes-sociales">
@@ -333,10 +333,10 @@
             </div>
         </div>
         
-        <!-- Copyright -->
+        <!-- Derechos de autor -->
         <div class="copyright">
-            <p>&copy; 2025 uPhone - Todos los derechos reservados</p>
-            <p>&copy; 2025 <a href="#" class="red-social">WebExperts</a> - Todos los derechos reservados</p>
+            <p>&copy; 2025 <a href="https://www.webxpert.com.ar" class="red-social" target="_blank" rel="noopener">WebExperts</a> - Todos los derechos reservados</p>
+            <p>Desarrollado por Julio Pintos | <a href="https://www.webxpert.com.ar" target="_blank" rel="noopener">www.webxpert.com.ar</a></p>
         </div>
     </footer>
 </body>

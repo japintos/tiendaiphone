@@ -1,6 +1,6 @@
-/* Cargar base.css antes. Estilos específicos de Inicio. */
+/* Estilos solo de la página de inicio (base.css va primero) */
 
-/* ===== SECCIÓN HERO ===== */
+/* La portada grande con el mensaje principal */
 .seccion-hero {
     background: linear-gradient(135deg, var(--color-primario) 0%, #3b82f6 100%);
     color: var(--color-blanco);
@@ -32,7 +32,7 @@
     font-weight: 300;
 }
 
-/* Botón principal con efectos hover */
+/* El botón que resalta cuando pasás el mouse */
 .boton-principal {
     display: inline-block;
     background-color: var(--color-secundario);
@@ -64,7 +64,7 @@
     box-shadow: var(--sombra-fuerte);
 }
 
-/* ===== SECCIONES GENERALES ===== */
+/* Espaciado de las secciones del medio de la página */
 .seccion-caracteristicas,
 .seccion-destacados,
 .seccion-testimonios {
@@ -94,7 +94,7 @@
     border-radius: 2px;
 }
 
-/* ===== GRID DE CARACTERÍSTICAS ===== */
+/* Las cuatro tarjetas de "por qué elegirnos" (garantía, calidad, etc.) */
 .grid-caracteristicas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -132,7 +132,7 @@
     line-height: 1.6;
 }
 
-/* ===== GRID DE PRODUCTOS ===== */
+/* Los productos destacados en tarjetas */
 .grid-productos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -233,7 +233,7 @@
     transform: translateY(-2px);
 }
 
-/* ===== SECCIÓN TESTIMONIOS ===== */
+/* La parte de "lo que dicen nuestros clientes" */
 .seccion-testimonios {
     background-color: var(--color-gris-claro);
 }
@@ -275,9 +275,9 @@
     font-size: 0.9rem;
 }
 
-/* ===== MEDIA QUERIES PARA RESPONSIVE DESIGN ===== */
+/* Ajustes para que se vea bien en pantallas chicas */
 
-/* Tablets (768px y menos) */
+/* Tablets */
 @media (max-width: 768px) {
     .seccion-hero {
         flex-direction: column;
@@ -309,7 +309,7 @@
     }
 }
 
-/* Móviles (480px y menos) */
+/* Celulares */
 @media (max-width: 480px) {
     .seccion-hero {
         padding: 2rem 1rem;
@@ -340,7 +340,7 @@
     }
 }
 
-/* Enfoque visible para botones de esta página */
+/* Para que se vea el borde cuando tabulás entre los botones */
 .boton-principal:focus,
 .boton-producto:focus,
 .boton-secundario:focus {

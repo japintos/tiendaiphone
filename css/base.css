@@ -1,14 +1,13 @@
-/* ===== BASE.CSS - Estilos compartidos por todas las páginas uPhone ===== */
-/* Reset, layout principal, variables, cabecera, pie y elementos comunes */
+/* Acá tengo todo lo que se repite en todas las páginas */
 
-/* ===== RESET ===== */
+/* Arranco sacando márgenes y espacios que vienen por defecto */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ===== BODY ===== */
+/* Cómo se ve la página en general (letra, color de fondo) */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
@@ -18,7 +17,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== LAYOUT PRINCIPAL CON CSS GRID ===== */
+/* Acá defino las tres partes de la página: arriba cabecera, en el medio el contenido, abajo el pie */
 body {
     display: grid;
     grid-template-areas:
@@ -41,9 +40,9 @@ body {
     grid-area: pie-pagina;
 }
 
-/* ===== VARIABLES CSS ===== */
+/* Colores y cosas que uso en todo el sitio (así si quiero cambiar algo lo cambio en un solo lugar) */
 :root {
-    /* Colores principales */
+    /* Los colores que más uso */
     --color-primario: #1e3a8a;
     --color-secundario: #f97316;
     --color-fondo: #f8f9fa;
@@ -53,27 +52,27 @@ body {
     --color-gris-claro: #e5e7eb;
     --color-gris-medio: #9ca3af;
 
-    /* Badges de estado (productos) */
+    /* Colores para las etiquetas de estado del producto (excelente, muy bueno, etc.) */
     --color-excelente: #10b981;
     --color-muy-bueno: #3b82f6;
     --color-bueno: #f59e0b;
 
-    /* Estados (formularios, mensajes) */
+    /* Colores para mensajes de éxito, error o aviso en formularios */
     --color-exito: #10b981;
     --color-error: #ef4444;
     --color-advertencia: #f59e0b;
 
-    /* Sombras */
+    /* Sombras suaves para dar profundidad a las cajas */
     --sombra-suave: 0 2px 4px rgba(0, 0, 0, 0.1);
     --sombra-media: 0 4px 8px rgba(0, 0, 0, 0.15);
     --sombra-fuerte: 0 8px 16px rgba(0, 0, 0, 0.2);
 
-    /* Transiciones */
+    /* Qué tan rápido se animan los efectos al pasar el mouse */
     --transicion-rapida: 0.2s ease;
     --transicion-media: 0.3s ease;
 }
 
-/* ===== CABECERA ===== */
+/* La barra de arriba con el logo y el menú */
 .cabecera {
     background: var(--color-blanco);
     box-shadow: var(--sombra-suave);
@@ -111,10 +110,6 @@ body {
     transition: all var(--transicion-rapida);
 }
 
-.navegacion-principal {
-    /* Flexbox para menú horizontal */
-}
-
 .menu {
     display: flex;
     list-style: none;
@@ -142,7 +137,7 @@ body {
     color: var(--color-blanco);
 }
 
-/* ===== SECCIÓN ENCABEZADO COMÚN (páginas internas) ===== */
+/* El encabezado con fondo de color que tienen las páginas internas (catálogo, contacto, etc.) */
 .seccion-encabezado {
     background: linear-gradient(135deg, var(--color-primario) 0%, #3b82f6 100%);
     color: var(--color-blanco);
@@ -155,7 +150,7 @@ body {
     margin: 0 auto;
 }
 
-/* ===== BREADCRUMB ===== */
+/* La ruta de navegación tipo "Inicio > Catálogo > Producto" */
 .breadcrumb {
     background-color: var(--color-gris-claro);
     padding: 1rem 2rem;
@@ -183,7 +178,7 @@ body {
     font-weight: 500;
 }
 
-/* ===== FOOTER ===== */
+/* El pie de página (contacto, enlaces, redes) */
 .pie-pagina {
     background-color: var(--color-primario);
     color: var(--color-blanco);
@@ -248,7 +243,7 @@ body {
     opacity: 0.8;
 }
 
-/* ===== RESPONSIVE - Cabecera y footer ===== */
+/* Para que se vea bien en tablets y celulares (cabecera y pie) */
 @media (max-width: 768px) {
     .contenedor-cabecera {
         flex-direction: column;
@@ -291,7 +286,7 @@ body {
     }
 }
 
-/* ===== ACCESIBILIDAD ===== */
+/* Para que se note bien el enlace cuando lo seleccionás con el teclado */
 .menu a:focus {
     outline: 3px solid var(--color-secundario);
     outline-offset: 2px;
