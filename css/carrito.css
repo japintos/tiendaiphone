@@ -59,9 +59,6 @@
     border-bottom: none;
 }
 
-.imagen-producto-carrito {
-    /* La foto del producto */
-}
 
 .img-producto-carrito {
     width: 80px;
@@ -128,9 +125,7 @@
     color: var(--color-secundario);
 }
 
-.acciones-producto {
-    /* Seguir comprando y vaciar carrito */
-}
+
 
 .boton-eliminar {
     background-color: var(--color-error);
@@ -190,19 +185,12 @@
     transform: translateY(-2px);
 }
 
-/* La columna de la derecha: total y formulario */
-.resumen-checkout {
-    /* Resumen arriba, formulario abajo */
-}
-
 .resumen-compra {
     background: var(--color-blanco);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--sombra-media);
     margin-bottom: 2rem;
-    position: sticky;
-    top: 120px;
 }
 
 .titulo-resumen {
@@ -252,9 +240,6 @@
     font-size: 1.5rem;
 }
 
-.info-adicional-carrito {
-    /* Los íconos de garantía, envío, etc. */
-}
 
 .info-item {
     display: flex;
@@ -288,10 +273,6 @@
     color: var(--color-texto-claro);
     margin-bottom: 2rem;
     font-size: 0.95rem;
-}
-
-/* Los campos del formulario (nombre, dirección, etc.) */
-.formulario-compra {
 }
 
 .grupo-campos {

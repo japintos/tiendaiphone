@@ -46,9 +46,7 @@
     box-shadow: var(--sombra-media);
 }
 
-.texto-garantia {
-    /* El texto */
-}
+
 
 .titulo-seccion {
     font-size: 2rem;
@@ -181,9 +179,6 @@
     margin: 0 auto;
 }
 
-.contenedor-proceso {
-    /* Los pasos del proceso */
-}
 
 .descripcion-proceso {
     font-size: 1.1rem;
